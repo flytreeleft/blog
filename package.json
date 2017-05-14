@@ -1,0 +1,37 @@
+{
+  "name": "flytreeleft.github.io",
+  "version": "0.1.0",
+  "license": "CC-BY-4.0",
+  "homepage": "https://flytreeleft.github.io",
+  "private": true,
+  "scripts": {
+    "dev": "npm run hexo -- server",
+    "debug": "npm run hexo -- server --debug",
+    "create": "npm run hexo -- new",
+    "build": "npm run hexo -- generate",
+    "deploy": "npm run hexo -- deploy --generate",
+    "site": "npm run hexo -- server -s",
+    "clean": "npm run hexo -- clean",
+    "hexo": "./node_modules/.bin/hexo --config config.yml"
+  },
+  "hexo": {
+    "version": "3.3.5"
+  },
+  "dependencies": {
+    "hexo": "^3.3.5",
+    "hexo-autoprefixer": "^1.0.0",
+    "hexo-deployer-git": "^0.3.0",
+    "hexo-generator-archive": "^0.1.4",
+    "hexo-generator-category": "^0.1.3",
+    "hexo-generator-feed": "^1.2.0",
+    "hexo-generator-index": "^0.2.1",
+    "hexo-generator-json-content": "^3.0.1",
+    "hexo-generator-search": "^2.1.1",
+    "hexo-generator-tag": "^0.2.0",
+    "hexo-renderer-ejs": "^0.3.0",
+    "hexo-renderer-less": "^0.2.0",
+    "hexo-renderer-marked": "^0.3.0",
+    "hexo-renderer-stylus": "^0.3.3",
+    "hexo-server": "^0.2.0"
+  }
+}
