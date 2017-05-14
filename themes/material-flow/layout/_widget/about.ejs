@@ -1,0 +1,12 @@
+<section class='m_widget about'>
+<% if(config.avatar) { %>
+<img class='avatar waves-image' src='<%= url_for(config.avatar) %>' />
+<%} %>
+<div class='header'><%=config.author %></div>
+<div class='content'>
+<% if (config.quotes) { %>
+<% var index = Math.floor(Math.random() * (config.quotes.length - 1)); %>
+<div class='desc'><%=config.quotes[index] %></div>
+<%} %>
+</div>
+</section>
