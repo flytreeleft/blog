@@ -78,6 +78,12 @@ search:
   path: search.xml
   field: post
 
+copyright:
+  license:
+    name: 知识共享署名 4.0 国际许可协议
+    url: http://creativecommons.org/licenses/by/4.0/
+  append_post_url: true
+
 autoprefixer:
   exclude:
     - '*.min.css'
