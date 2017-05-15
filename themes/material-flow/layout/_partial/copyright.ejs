@@ -1,0 +1,20 @@
+<% if (config.copyright) { %>
+<div class="article-footer-copyright">
+    <p>
+    <% if (config.copyright.license) { %>
+    本文采用<a href="<%=config.copyright.license.url %>"><%=config.copyright.license.name %></a>进行许可。
+    <br>
+    <%} %>
+    欢迎转载，但转载请注明来自<a href="<%=config.url %>"><%=config.title %></a>，并保持转载后文章内容的完整。
+    <br>
+    本人保留所有版权相关权利。
+    </p>
+    <% if (config.copyright.append_post_url != false) { %>
+    <p>
+    本文标题：<a href="<%=post.permalink %>"><%=post.title %></a>
+    <br>
+    本文链接：<a href="<%=post.permalink %>"><%=post.permalink %></a>
+    </p>
+    <%} %>
+</div>
+<%} %>
