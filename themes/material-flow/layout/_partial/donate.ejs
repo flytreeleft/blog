@@ -1,0 +1,15 @@
+<% if (config.donate) { %>
+<div class="article-footer-donate">
+    <a class="icon-like"
+       href="javascript:void(0)"
+       title="<%=config.donate.title || ''%>">
+    </a>
+    <% if (config.donate.qr_codes) { %>
+    <div class="qr-codes" style="display: none">
+        <% Object.keys(config.donate.qr_codes).forEach(function(name) { %>
+        <img src="<%- url_for(config.donate.qr_codes[name]) %>">
+        <%}) %>
+    </div>
+    <%} %>
+</div>
+<%} %>

@@ -1,0 +1,42 @@
+@keyframes flipY {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.article-footer-donate {
+    width: 80%;
+    //padding: 0 1.5em;
+    margin: .5em auto;
+    text-align: center;
+}
+
+.article-footer-donate .icon-like {
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 2em;
+    //color: transparent !important;
+    background-color: transparent !important;
+    transition: all .5s ease;
+
+    &:hover {
+        transform: scale(1.5);
+        transition: all .5s ease;
+    }
+}
+
+.article-footer-donate .qr-codes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: .5em 0;
+
+    & img {
+        width: 8em;
+        margin: 0 1em;
+    }
+}
