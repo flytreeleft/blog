@@ -15,7 +15,7 @@
     "hexo": "./node_modules/.bin/hexo --config config.yml"
   },
   "hexo": {
-    "version": "3.3.5"
+    "version": "3.3.6"
   },
   "dependencies": {
     "hexo": "^3.3.5",
