@@ -17,6 +17,8 @@ categories:
 
 此时，不仅需要将组件所在目录内的代码全部拆分到单独的仓库，同时，还需要确保历史记录能够完整保留。
 
+<!--more-->
+
 ### 操作
 
 ```bash
@@ -56,6 +58,7 @@ git push -u origin master
 ### 操作
 
 - 部分替换：
+
 ```bash
 git filter-branch --commit-filter \
         'if [ "$GIT_AUTHOR_NAME" = "OldAuthor Name" ]; then \
@@ -65,11 +68,12 @@ git filter-branch --commit-filter \
              export GIT_COMMITTER_EMAIL=commiterEmail@example.com; \
          fi; \
          git commit-tree "$@" '
-# Push 'master' to the existing repository
+# Push to the branch 'master' of the existing repository
 git push --force origin master
 ```
 
 - 全部替换：
+
 ```bash
 git filter-branch --commit-filter \
         'export GIT_AUTHOR_NAME="Author Name"; \
@@ -77,7 +81,7 @@ git filter-branch --commit-filter \
          export GIT_COMMITTER_NAME="Commmiter Name"; \
          export GIT_COMMITTER_EMAIL=commiterEmail@example.com; \
          git commit-tree "$@" '
-# Push 'master' to the existing repository
+# Push to the branch 'master' of the existing repository
 git push --force origin master
 ```
 
@@ -110,3 +114,53 @@ git clone url://to/new/repository.git feature-branch
 ### 参考
 
 - [How do I move a Git branch out into its own repository?](https://stackoverflow.com/questions/2227062/how-do-i-move-a-git-branch-out-into-its-own-repository)
+
+## 修改历史提交备注信息
+
+### 场景
+
+在[拆分子目录](#拆分子目录到新仓库)和[迁移子分支](#迁移子分支至新仓库)两个场景中，
+在新仓库中的历史提交记录的备注信息可能存在与项目不相关的信息或者包含原始项目中的一些敏感内容。
+这个时候，就可能需要修改这些备注信息。
+
+当然，也可能是因为发现以前的提交备注中包含错别字或者表达不清晰，为了避免对其他人产生误导或困惑，
+将提交的备注信息予以纠正也是很有必要的。
+
+### 操作
+
+- 获取提交ID并Rebase到该提交
+
+```bash
+# List histories and get the commit id which should be modified
+git log
+# Rebase to 3 commits before the specified commit (e.g. 'ce0ac37c83')
+git rebase --interactive ce0ac37c83~3
+```
+
+![](/assets/images/git-usage-cases-rebase-to-target-commit.png)
+
+- 将提交所在行开始处的`pick`修改为`edit`
+
+![](/assets/images/git-usage-cases-change-history-commit.png)
+
+- 提交并应用修改
+
+```bash
+# New commit message
+git commit --amend -m "fix that the dragging preview can not be shown"
+# Apply the changes and return to HEAD
+git rebase --continue
+# Push to the branch 'master' of the existing repository
+## Make sure that the remote branch 'master' is unprotected
+git push --force origin master
+```
+
+**注意**：
+- 如果需要放弃修改，则运行命令`git rebase --abort`
+- 若直接`rebase`到目标commit，则该提交不会显示在可修改清单内，故，需选择从其之前的第N个（e.g. `~3`）提交开始
+- 若提交至非空的仓库，需确保目标分支不是受保护（`protected`）的
+- 在应用修改后，git将从修改位置开始重新构建commit tree，因此，从该位置开始到HEAD的commit id均会发生变化，但原始commit tree依然存在，通过`git diff ce0ac37c83`等可看到该提交的变更情况
+
+### 参考
+
+- [How to modify existing, unpushed commits?](https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits)
