@@ -15,7 +15,7 @@
     "hexo": "./node_modules/.bin/hexo --config config.yml"
   },
   "hexo": {
-    "version": "3.3.6"
+    "version": "3.4.2"
   },
   "dependencies": {
     "hexo": "^3.3.5",
@@ -29,9 +29,11 @@
     "hexo-generator-search": "^2.1.1",
     "hexo-generator-tag": "^0.2.0",
     "hexo-renderer-ejs": "^0.3.0",
+    "hexo-renderer-jade": "^0.4.1",
     "hexo-renderer-less": "^0.2.0",
     "hexo-renderer-marked": "^0.3.0",
     "hexo-renderer-stylus": "^0.3.3",
-    "hexo-server": "^0.2.0"
+    "hexo-server": "^0.2.0",
+    "hexo-wordcount": "^3.0.2"
   }
 }

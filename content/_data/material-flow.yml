@@ -1,0 +1,15 @@
+# Configuration for [hexo-theme-material-flow](https://github.com/stkevintan/hexo-theme-material-flow)
+
+donate:
+  title: 点赞支持
+  qr_codes:
+    wechat: assets/profile/wechatpay.png
+    alipay: assets/profile/alipay.png
+
+copyright:
+  license:
+    name: 知识共享署名 4.0 国际许可协议
+    url: http://creativecommons.org/licenses/by/4.0/
+  append_post_url: true
+
+disqus_shortname: flytreeleft-blog

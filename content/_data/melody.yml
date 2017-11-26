@@ -1,0 +1,163 @@
+# Configuration for [hexo-theme-melody](https://molunerfinn.com/hexo-theme-melody-doc/)
+
+# Version
+# ---------------
+version: 1.3
+
+top_img: /assets/profile/walle-watch-the-stars-sky.jpg
+
+# Navigation menu
+menu:
+  Home: /
+  Archives: /archives
+  Tags: /tags
+  Categories: /categories
+  About: /about
+
+# Nav settings
+# ---------------
+social:
+  github: https://github.com/flytreeleft
+  twitter: https://twitter.com/flytreeleft
+
+# Sidebar Settings
+# ---------------
+links_title: Links
+links:
+  酷壳: https://coolshell.cn/
+  InfoQ: https://www.infoq.com/
+
+# Highlight theme
+# ---------------
+highlight_theme: default
+
+# Post info settings
+# ---------------
+post_meta:
+  date_type: created # created or updated
+  categories: true
+  tags: true
+  top_img: false
+
+wordcount:
+  enable: true
+
+toc:
+  enable: true
+
+post_copyright:
+  enable: true
+  license: 知识共享署名 4.0 国际许可协议
+  license_url: http://creativecommons.org/licenses/by/4.0/
+
+# Algolia search
+# ---------------
+algolia_search:
+  enable: false
+  hits:
+    per_page: 10
+  labels:
+    input_placeholder: Search for Posts
+    hits_empty: "We didn't find any results for the search: ${query}"
+    hits_stats: "${hits} results found in ${time} ms"
+
+# Local search
+# ---------------
+local_search:
+  enable: true
+  labels:
+    input_placeholder: Search for Posts
+    hits_empty: "We didn't find any results for the search: ${query}"
+
+# MathJax
+# ---------------
+mathjax:
+  enable: false
+  cdn: https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+# Toggle fireworks (IE >= 10)
+# ---------------
+fireworks: false
+
+# Analysis
+# ---------------
+baidu_analytics:
+
+google_analytics:
+
+QR_code:
+- img: /assets/profile/wechatpay.png
+  text:
+- img: /assets/profile/alipay.png
+  text:
+
+# Share
+addThis:
+  enable: false
+  #pubid:
+
+# Comments
+disqus:
+  enable: true # or false
+  shortname: flytreeleft-blog
+  count: true # or false. It show the comments of your post
+
+# Footer Settings
+# ---------------
+since: 2017
+
+# PWA
+# ---------------
+pwa:
+  enable: false
+  manifest:
+
+ICP:
+  enable: false
+  #text:
+
+# busuanzi count for PV / UV in site
+busuanzi:
+  # count values only if the other configs are false
+  enable: true
+  # custom uv span for the whole site
+  site_uv: true
+  site_uv_header: <i class="fa fa-user"></i>
+  site_uv_footer:
+  # custom pv span for the whole site
+  site_pv: true
+  site_pv_header: <i class="fa fa-eye"></i>
+  site_pv_footer:
+  # custom pv span for one page only
+  page_pv: true
+  page_pv_header: <i class="fa fa-file-o"></i>
+  page_pv_footer:
+
+# stylesheets loaded in the <head>
+# ---------------
+stylesheets:
+- /css/index.css
+
+# scripts loaded in the end of the body
+# ---------------
+scripts:
+- /js/utils.js
+- /js/fancybox.js
+- /js/sidebar.js
+- /js/copy.js
+- /js/fireworks.js
+- /js/transition.js
+- /js/scroll.js
+- /js/head.js
+
+# cdn for third-party library
+# ---------------
+cdn:
+  css:
+    fontawesome: https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css
+  js:
+    anime: /js/third-party/anime.min.js
+    jquery: /js/third-party/jquery.min.js
+    fancybox: /js/third-party/jquery.fancybox.min.js
+    velocity: /js/third-party/velocity.min.js
+    velocity-ui: /js/third-party/velocity.ui.min.js

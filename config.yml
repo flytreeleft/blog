@@ -12,7 +12,7 @@ author: flytreeleft
 email: flytreeleft@126.com
 avatar: /assets/profile/avatar.jpg
 favicon: /assets/profile/favicon.png
-language: zh-CN
+language: zh-Hans #zh-CN
 timezone: Asia/Shanghai
 keywords:
   - IT
@@ -68,27 +68,14 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
-disqus_shortname: flytreeleft-blog
-
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: material-flow
+theme: melody
+
 search:
   path: search.xml
   field: post
-
-donate:
-  title: 点赞支持
-  qr_codes:
-    wechat: assets/profile/wechatpay.png
-    alipay: assets/profile/alipay.png
-
-copyright:
-  license:
-    name: 知识共享署名 4.0 国际许可协议
-    url: http://creativecommons.org/licenses/by/4.0/
-  append_post_url: true
 
 autoprefixer:
   exclude:

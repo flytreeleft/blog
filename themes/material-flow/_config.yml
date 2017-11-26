@@ -1,8 +1,8 @@
 # Search
-search: 
+search:
   enable: true
   service: hexo # google/hexo/algolia/azure/baidu
-  # google 
+  # google
   google_api_key:
   google_engine_id:
   # algolia
@@ -18,12 +18,10 @@ search:
 
 # friends link
 links:
-  - name: 开源中国
-    url: http://www.oschina.net/
   - name: 酷壳
-    url: http://coolshell.cn/
+    url: https://coolshell.cn/
   - name: InfoQ
-    url: http://www.infoq.com/
+    url: https://www.infoq.com/
 
 # navigation menu
 menu:
