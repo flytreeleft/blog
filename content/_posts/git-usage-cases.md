@@ -25,14 +25,18 @@ categories:
 # Clone the repository that contains the subfolder.
 git clone https://github.com/USERNAME/REPOSITORY-NAME
 cd REPOSITORY-NAME
+
 # To filter out the subfolder from the rest of the files in the repository
 ## FOLDER-NAME: The folder within your project that you'd like to create a separate repository from.
 ## BRANCH-NAME: The default branch for your current project, for example, 'master' or 'gh-pages'
 git filter-branch --prune-empty --subdirectory-filter FOLDER-NAME BRANCH-NAME
+
 # Change the existing remote 'origin' (or other name) URL to the new repository URL
 git remote set-url origin https://github.com/USERNAME/NEW-REPOSITORY-NAME.git
+
 # [Optional] Change BRANCH-NAME to the default branch (e.g. 'master') of the new repository
 git branch -m BRANCH-NAME master
+
 # Push your changes to the new repository
 git push -u origin master
 ```
@@ -105,8 +109,10 @@ git push --force origin master
 ```bash
 # Push 'feature-branch' to the branch 'master' (or others) of new repository
 git push url://to/new/repository.git feature-branch:master
+
 # [Optional] Delete the 'feature-branch' from current repository
 git branch -d feature-branch
+
 # Clone codes from new repository
 git clone url://to/new/repository.git feature-branch
 ```
@@ -133,6 +139,7 @@ git clone url://to/new/repository.git feature-branch
 ```bash
 # List histories and get the commit id which should be modified
 git log
+
 # Rebase to 3 commits before the specified commit (e.g. 'ce0ac37c83')
 git rebase --interactive ce0ac37c83~3
 ```
@@ -148,8 +155,10 @@ git rebase --interactive ce0ac37c83~3
 ```bash
 # New commit message
 git commit --amend -m "fix that the dragging preview can not be shown"
+
 # Apply the changes and return to HEAD
 git rebase --continue
+
 # Push to the branch 'master' of the existing repository
 ## Make sure that the remote branch 'master' is unprotected
 git push --force origin master
