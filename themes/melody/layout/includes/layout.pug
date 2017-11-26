@@ -7,6 +7,11 @@
 - if (is_year()) pageTitle += ': ' + page.year
 - pageTitle += ' | ' + config.title
 
+- var stylesheets = '/css/index.css'.split(',')
+- var scripts = '/js/utils.js,/js/fancybox.js,/js/sidebar.js,/js/copy.js,/js/fireworks.js,/js/transition.js,/js/scroll.js,/js/head.js'.split(',')
+- var extraStylesheets = 'https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css'.split(',')
+- var extraScripts = '/js/third-party/anime.min.js,/js/third-party/jquery.min.js,/js/third-party/jquery.fancybox.min.js,/js/third-party/velocity.min.js,/js/third-party/velocity.ui.min.js'.split(',')
+
 doctype html
 html(lang=config.language)
   head
@@ -14,10 +19,10 @@ html(lang=config.language)
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
     title= pageTitle
-    if theme.stylesheets !== undefined && theme.stylesheets.length > 0
-      each url in theme.stylesheets
+    if stylesheets
+      each url in stylesheets
         link(rel='stylesheet', href=url)
-    each item in theme.cdn.css
+    each item in extraStylesheets
       if item !== undefined
         link(rel='stylesheet', href=item + '?version=' + theme.version)
     include ./head.pug
@@ -40,11 +45,11 @@ html(lang=config.language)
     footer
       include ./footer.pug
     i.fa.fa-arrow-up#go-up(aria-hidden="true")
-    each item in theme.cdn.js
+    each item in extraScripts
       if item !== undefined
         script(src=item)
-    if theme.scripts !== undefined && theme.scripts.length > 0
+    if scripts
       //- scripts list from config.yml
-      each url in theme.scripts
+      each url in scripts
         script(src=url + '?version=' + theme.version)
     include ./additional-js.pug
