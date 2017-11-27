@@ -9,10 +9,10 @@
     "debug": "npm run hexo -- server --debug",
     "create": "npm run hexo -- new",
     "build": "npm run hexo -- generate",
-    "deploy": "npm run hexo -- deploy --generate",
     "site": "npm run hexo -- server -s",
     "clean": "npm run hexo -- clean",
-    "hexo": "./node_modules/.bin/hexo --config config.yml"
+    "hexo": "./node_modules/.bin/hexo --config config.yml",
+    "deploy": "bash ./build/build.sh"
   },
   "hexo": {
     "version": "3.4.2"
