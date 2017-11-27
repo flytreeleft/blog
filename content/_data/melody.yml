@@ -37,7 +37,7 @@ post_meta:
   date_type: created # created or updated
   categories: true
   tags: true
-  top_img: false
+  top_img:
 
 wordcount:
   enable: true

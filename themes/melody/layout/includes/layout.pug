@@ -7,6 +7,9 @@
 - if (is_year()) pageTitle += ': ' + page.year
 - pageTitle += ' | ' + config.title
 
+- var pageDescription = page.description || config.description || ''
+- var pageKeywords = (page.keywords || config.keywords || []).join(',')
+
 - var stylesheets = '/css/index.css'.split(',')
 - var scripts = '/js/utils.js,/js/fancybox.js,/js/sidebar.js,/js/copy.js,/js/fireworks.js,/js/transition.js,/js/scroll.js,/js/head.js'.split(',')
 - var extraStylesheets = 'https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css'.split(',')
@@ -18,7 +21,10 @@ html(lang=config.language)
     meta(charset='UTF-8')
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+    meta(name="description" content=pageDescription)
+    meta(name="keywords" content=pageKeywords)
     title= pageTitle
+    !=favicon_tag(config.favicon || theme.favicon)
     if stylesheets
       each url in stylesheets
         link(rel='stylesheet', href=url)
@@ -27,7 +33,6 @@ html(lang=config.language)
         link(rel='stylesheet', href=item + '?version=' + theme.version)
     include ./head.pug
     include ./config.pug
-    link(rel="icon", href=config.root + 'favicon.ico')
   body
     if theme.fireworks
       canvas.fireworks
