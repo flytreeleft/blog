@@ -31,7 +31,7 @@ pushd $deploy_dir
     try git rm -r *
 
     echo "Commit new dist files."
-    try cp -r ../dist/* .
+    try mv ../dist/* .
     try git add *
     try git add -A
     try git commit -m "Site updated"
