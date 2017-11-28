@@ -63,12 +63,6 @@ $(function () {
     scrollToHead($(this).attr('href'))
   })
 
-  function updateAnchor(anchor) {
-    if (anchor != location.hash) {
-      history.replaceState(undefined, undefined, anchor)
-    }
-  }
-
   // find the scroll direction
   function scrollDirection (currentTop) {
     var result = currentTop > initTop // true is down & false is up
@@ -78,7 +72,6 @@ $(function () {
 
   // scroll to a head(anchor)
   function scrollToHead (anchor) {
-    //updateAnchor(anchor)
     $(anchor).velocity('stop').velocity('scroll', {
       duration: 500,
       easing: 'easeInOutQuart'
@@ -108,6 +101,12 @@ $(function () {
         duration: 100,
         easing: 'easeInOutQuart'
       })
+  }
+
+  function updateAnchor(anchor) {
+    if (history.replaceState && anchor != location.hash) {
+      history.replaceState(undefined, undefined, anchor)
+    }
   }
 
   // find head position & add active class

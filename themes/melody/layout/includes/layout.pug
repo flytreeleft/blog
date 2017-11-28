@@ -7,8 +7,11 @@
 - if (is_year()) pageTitle += ': ' + page.year
 - pageTitle += ' | ' + config.title
 
-- var pageDescription = page.description || config.description || ''
-- var pageKeywords = (page.keywords || config.keywords || []).join(',')
+- var pageDescription = page.description || page.title || config.description || ''
+- var pageKeywords = (config.keywords || []).join(',')
+- if (page.tags && page.tags.data) pageKeywords = page.tags.data.map(function(tag) {return tag.name;}).join(',')
+- var pageAuthor = config.author + ',' + config.email
+- var pageCopyright = config.copyright || config.author
 
 - var stylesheets = '/css/index.css'.split(',')
 - var scripts = '/js/utils.js,/js/fancybox.js,/js/sidebar.js,/js/copy.js,/js/fireworks.js,/js/transition.js,/js/scroll.js,/js/head.js'.split(',')
@@ -23,8 +26,10 @@ html(lang=config.language)
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
     meta(name="description" content=pageDescription)
     meta(name="keywords" content=pageKeywords)
+    meta(name="author" content=pageAuthor)
+    meta(name="copyright" content=pageCopyright)
     title= pageTitle
-    !=favicon_tag(config.favicon || theme.favicon)
+    !=favicon_tag(config.favicon || theme.favicon || '/favicon.ico')
     if stylesheets
       each url in stylesheets
         link(rel='stylesheet', href=url)
