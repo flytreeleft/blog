@@ -1,6 +1,8 @@
 [flytreeleft's Blog](https://flytreeleft.github.io)
 ========================================================
 
+> The source code is [here](https://github.com/flytreeleft/blog).
+
 ## Usage
 
 ### Start local service
@@ -15,6 +17,7 @@ $ npm run debug
 ### Build publish files
 
 ```bash
+# The publish files will be put to the directory 'dist'
 $ npm run build
 
 # Clean
@@ -43,7 +46,7 @@ $ npm run deploy
 ## About comments
 
 个人十分期望能与他人对各种思想进行讨论和探索，不过，考虑到若为博客添加评论支持，那个人精力和情绪无可避免地会受到评论的影响，
-当然，更多的时候还是对无人评论或关注所产生的失落感，人寻求共鸣与被关注的愿望是如此强烈且难以遏制。
+当然，更多的时候还是对无人评论或关注所产生的失落感（人寻求共鸣与被关注的愿望是如此强烈且难以遏制）。
 
 所以，在博客站点中未开启评论支持，若你有什么想法愿同我讨论，请发邮件至 flytreeleft@126.com ，
 在[这里](https://github.com/flytreeleft/blog/issues)创建issue也是可以的。
