@@ -98,7 +98,7 @@ addThis:
 
 # Comments
 disqus:
-  enable: true # or false
+  enable: false
   shortname: flytreeleft-blog
   count: true # or false. It show the comments of your post
 
