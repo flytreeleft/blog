@@ -6,9 +6,13 @@ tags:
 categories:
 ---
 
-> 列举日常和网络中所发现的软件、应用、服务等的<u>作恶</u>行为，将其永久钉在<u>耻辱柱</u>上，有条件的或有候选方案的，应主动弃用之！
+> 列举日常和网络中所发现的软件、应用、服务等的「作恶」行为，将其永久钉在「耻辱柱」上。有条件的或有候选方案的，应主动弃用之！
 > 坚持开放、坚持自由。点击下载[自由软件自由社会.pdf](http://mirror.lihnidos.org/GNU/savannah/blug/fsfs-zh/fsfs-zh.pdf)
 
-- [闲鱼](https://2.taobao.com/)Web服务隐藏搜索框
-  - 事件： https://www.appinn.com/xianyu-search-box/
-  - 应对： https://github.com/hellopenggao/xianyu_search_box
+## 为逼迫用户使用客户端而阉割Web端的基本功能
+
+- 案例： [闲鱼](https://2.taobao.com/)Web端隐藏搜索框
+- 来源： https://www.appinn.com/xianyu-search-box/
+- 评语： 若欲达KPI，必先「中二自宫」
+
+![闲鱼Web端隐藏搜索框截图@2017-12-05](/assets/images/the-evil-behaviors/xianyu-hide-itself-search-form-of-web-client.png)
