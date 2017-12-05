@@ -14,5 +14,6 @@ categories:
 - 案例： [闲鱼](https://2.taobao.com/)Web端隐藏搜索框
 - 来源： https://www.appinn.com/xianyu-search-box/
 - 评语： 若欲达KPI，必先「中二自宫」
+<!--more-->
 
 ![闲鱼Web端隐藏搜索框截图@2017-12-05](/assets/images/the-evil-behaviors/xianyu-hide-itself-search-form-of-web-client.png)

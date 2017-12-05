@@ -8,3 +8,5 @@ categories:
 ---
 
 > The post isn't finished yet, it will be updated anytime!
+
+<!--more-->

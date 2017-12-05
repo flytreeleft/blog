@@ -13,7 +13,9 @@ System.out.println("Hello world!");
 ```javascript
 alert('Hello world!');
 ```
+<!--more-->
 
 ```bash
 echo "Hello world!"
 ```
+
