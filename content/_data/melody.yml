@@ -49,7 +49,7 @@ toc:
 post_copyright:
   enable: true
   license: 知识共享署名 4.0 国际许可协议
-  license_url: http://creativecommons.org/licenses/by/4.0/
+  license_url: https://creativecommons.org/licenses/by/4.0/
 
 # Algolia search
 # ---------------
