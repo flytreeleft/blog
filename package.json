@@ -11,8 +11,10 @@
     "build": "npm run hexo -- generate",
     "site": "npm run hexo -- server -s",
     "clean": "npm run hexo -- clean",
-    "hexo": "./node_modules/.bin/hexo --config config.yml",
-    "deploy": "bash ./build/build.sh"
+    "deploy": "bash ./build/deploy.sh config.yml,github.yml",
+    "hexo": "npm run _hexo -- --config config.yml",
+    "_build": "npm run _hexo -- generate",
+    "_hexo": "./node_modules/.bin/hexo"
   },
   "hexo": {
     "version": "3.4.2"

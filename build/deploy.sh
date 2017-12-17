@@ -3,6 +3,7 @@
 repo='git@github.com:flytreeleft/flytreeleft.github.io.git'
 branch=master
 deploy_dir=deploy_dist
+build_conf=${1:-config.yml}
 
 user_email=$(git config user.email)
 user_name=$(git config user.name)
@@ -14,7 +15,9 @@ try() {
 echo "Build blog."
 try yarn install
 try npm run clean
-try npm run build
+
+try npm run _build -- --config "${build_conf}"
+[ -e _multiconfig.yml ] && try rm _multiconfig.yml
 
 if [ ! -d $deploy_dir ]; then
     echo "Clone a new copy to $deploy_dir."
@@ -31,7 +34,8 @@ pushd $deploy_dir
     try git rm -r *
 
     echo "Commit new dist files."
-    try mv ../dist/* . && cp ../README.md .
+    try mv ../dist/* .
+    try cp ../README.md .
     try git add *
     try git add -A
     try git commit -m "Site updated"
