@@ -17,6 +17,9 @@ categories:
 
 提要：
 - 比特币、比特交易网络
+- [以太坊](https://www.ethereum.org/)
+- [IOTA](http://www.iotachina.com/what-is-iota)
+  - [如何找回IOTA余额](http://www.iotachina.com/ruhezhaohuiiotayue.html)：可以从中了解转账机制与流程
 
 <!--more-->
 
