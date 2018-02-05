@@ -16,6 +16,8 @@ categories:
 
 很快我就找到了[Strapdown Zeta](https://github.com/chaitin/strapdown-zeta)，其对Mardown的支持较为全面，并且使用很简单，还提供多套主题可自由切换。需要提到的是该库为[Strapdown](https://github.com/arturadib/strapdown)的衍生与改进版本，而`Strapdown`已经很长时间未更新了，选择`Strapdown Zeta`也是看重其活跃度。
 
+<!--more-->
+
 在`Strapdown Zeta`的支持下仅需在`<xmp></xmp>`标签中编写Markdown并在最后引入 http://cdn.ztx.io/strapdown/strapdown.min.js 脚本即可。可惜的是，作者提供的该站点并未启用HTTPS，而我们在[Let's Encrypt](https://letsencrypt.org/)的帮助下已经对部门的所有站点启用了HTTPS。这样，若在页面中引用非HTTPS资源，浏览器默认将阻止该资源的下载。
 
 显然，这里不能直接在页面中引入该脚本，但是我也不愿再在站点上部署除使用文档之外的其他文件，就仅仅一个HTML文件即可，css什么的都不要有。
