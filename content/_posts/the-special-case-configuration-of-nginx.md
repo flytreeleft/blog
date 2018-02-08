@@ -4,7 +4,7 @@ title: Nginx特例场景配置
 date: 2018-02-05 20:30:47
 tags:
   - Nginx配置
-  - Nginx before Squid
+  - Nginx over Squid
   - Nginx防火墙穿透
   - HTTPS代理HTTP资源
 categories:
@@ -158,7 +158,7 @@ server {
 ```
 
 这里需要特别注意的是：
-- 这里做了两次`rewrite`是为了确保能够准确将目标URL地址附加到Squid的代理地址中以构成`http://<squid ip>:3128/<target url>`形式，同时，规避了因在[`rewrite`](http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite)的替换字符串中包含`http://`、`https://`或`$scheme`而导致重定向的问题；
+- 这里做了两次`rewrite`是为了确保能够准确将目标URL地址附加到Squid的代理地址中以构成`http://<squid ip>:3128/<target url>`形式，同时，规避了因在[rewrite](http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite)的替换字符串中包含`http://`、`https://`或`$scheme`而导致重定向的问题；
 - 同样为了安全考虑，这里隐藏了Squid的几个响应头，避免客户端得到Squid的真实IP地址而产生潜在的攻击风险；
 
 ## Nginx反向代理Nexus3的不同类型仓库
@@ -274,7 +274,7 @@ server {
 这里需要注意以下几点：
 - 在前两个`location`匹配后均跳转到`https://repo.example.com`，因为，这两个地址的请求可认为只能是从浏览器发出的，直接跳转到Nexus3可让访问者了解我们使用的是Nexus3系统，从而尽快熟悉该系统，完全没有必要将Nexus3代理到`https://mvn.example.com`域名下
 - `return 301`代表固定跳转，浏览器后续访问相同URL时将直接跳转到指定的目标，而不会再向服务器发送请求；而`return 302`为临时跳转，浏览器的后续访问依然会向服务器发送请求。对`= /`做临时跳转是因为我们可能会在该URL下放些说明文档之类的页面，如果做固定跳转，那么若后续支持该需求则只能在客户端清空浏览器`Cookie`后方能生效，对使用者会造成一定困扰
-- 看过[Maven代码](https://github.com/apache/maven)可以发现其使用的[HttpClient](https://hc.apache.org/httpcomponents-client-ga/)库向仓库发送HTTP请求，所以，只需要对`$request_method`对匹配，将读请求转发到`maven-pulic`和`maven-hosted`两个组合仓库中，而将写请求转发到`maven-hosted-*`仓库即可
+- 看过[Maven代码](https://github.com/apache/maven)可以发现其使用的[HttpClient](https://hc.apache.org/httpcomponents-client-ga/)库向仓库发送HTTP请求，所以，只需要对`$request_method`做匹配，将读请求转发到`maven-pulic`和`maven-hosted`两个组合仓库中，而将写请求转发到`maven-hosted-*`仓库即可
 
 剩下的就是调整Maven `settings.xml`。对普通的仅做依赖下载更新的配置为（**仅列出主要内容，请按实际需求修改**）：
 ```xml
@@ -454,7 +454,7 @@ server {
 
 ### `https://dcr.example.com`的反向代理配置
 
-在Nexus3中Docker类型的仓库需要使用不同的端口进行访问，创建仓库时需要为仓库[自行设定](http://www.sonatype.org/nexus/2016/06/29/using-nexus-3-as-a-private-docker-registry/)一个HTTP端口号，然后再通过Nginx将读写请求转发到不同的端口上。
+在Nexus3中，Docker类型的仓库需要使用不同的端口进行访问，创建仓库时需要为仓库[自行设定](http://www.sonatype.org/nexus/2016/06/29/using-nexus-3-as-a-private-docker-registry/)一个HTTP端口号，然后再通过Nginx将读写请求转发到不同的端口上。
 
 这里创建一个`hosted`模式的仓库`docker-hosted`用于`docker push`镜像，创建一个`group`模式的仓库`docker-public`用于组合多个第三方镜像仓库。
 
