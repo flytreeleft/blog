@@ -17,3 +17,11 @@ tags:
 --------------------------------
 > ## The other's success isn't yours, but the failure will be.
 > 成功者的成功不会是你的成功，失败者的失败必然是你的失败。
+
+--------------------------------
+> ## Thousands of little steps make the great miles away, thousands of little rivers make the great ocean.
+> 不积跬步，无以至千里；不积小流，无以成江海。
+
+--------------------------------
+> ## If no actions, your dream will still be a dream forever.
+> 如果不付诸行动，你的梦想将永远只是梦想。
