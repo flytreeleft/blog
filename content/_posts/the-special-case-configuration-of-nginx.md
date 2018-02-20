@@ -415,7 +415,7 @@ server {
 
     include /etc/nginx/vhost.d/npm.example.com/01_ssl.conf;
 
-    # Redirect to the maven repository (named as 'npm-public') of Nexus3
+    # Redirect to the npm repository (named as 'npm-public') of Nexus3
     location = / {
         return 302 $scheme://repo.example.com/#browse/browse/components:npm-public/;
     }
