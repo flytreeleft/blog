@@ -14,7 +14,7 @@ categories:
 
 > 本文所使用的相关代码片段可从 https://github.com/flytreeleft/docker-nginx-gateway 得到完整内容。
 
-## 随机展示自定义错误页面
+## Nginx随机展示自定义错误页面
 
 > Source code: https://github.com/flytreeleft/docker-nginx-gateway/tree/master/config/error-pages
 > Custom error pages: https://github.com/flytreeleft/docker-nginx-gateway/tree/master/examples/epage.d/all
