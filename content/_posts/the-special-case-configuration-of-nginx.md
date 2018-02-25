@@ -7,9 +7,105 @@ tags:
   - Nginx over Squid
   - Nginx防火墙穿透
   - HTTPS代理HTTP资源
+  - Nginx自定义错误页面
 categories:
   - 运维管理
 ---
+
+> 本文所使用的相关代码片段可从 https://github.com/flytreeleft/docker-nginx-gateway 得到完整内容。
+
+## 随机展示自定义错误页面
+
+> Source code: https://github.com/flytreeleft/docker-nginx-gateway/tree/master/config/error-pages
+> Custom error pages: https://github.com/flytreeleft/docker-nginx-gateway/tree/master/examples/epage.d/all
+
+**关键字**：
+- 随机展示多个错误页面
+- Nginx自定义错误页面
+
+在访问HTTP站点时最容易出现的错误就是404，于是就有许多非常有个性的404错误页面。而为我们自己的站点放置一些简洁、清爽的错误页面，在资源再利用的前提下，也将为我们自身增加不少好感和亲和力。
+
+这里将要介绍的便是如何为我们的站点配置自定义错误页面，并同时支持为相同错误随机展示不同的错误页面。
+
+<!--more-->
+
+### 分类展示
+
+分类展示就是相同类型的错误使用同种风格的错误页面，这里简单分为`404`、`40x`（主要为400，401，403）、`50x`（主要为500，502，503，504），其配置内容如下：
+
+```nginx
+# Obmit the `[=[response]]` syntax to keep the error response code for clients.
+## http://nginx.org/en/docs/http/ngx_http_core_module.html#error_page
+error_page 404              /404/;
+error_page 400 401 403      /40x/;
+error_page 500 502 503 504  /50x/;
+
+location /404/ {
+    internal;
+    random_index on;
+
+    root /etc/nginx/epage.d;
+}
+
+location /40x/ {
+    internal;
+    random_index on;
+
+    root /etc/nginx/epage.d;
+
+    # Replace the placeholders in response content
+    # for showing the corresponding status and message.
+    sub_filter '{{status}}' '$status';
+    sub_filter '{{status_msg}}' '$status_msg';
+    sub_filter_once off;
+}
+
+location /50x/ {
+    internal;
+    random_index on;
+
+    root /etc/nginx/epage.d;
+
+    # Replace the placeholders in response content
+    # for showing the corresponding status and message.
+    sub_filter '{{status}}' '$status';
+    sub_filter '{{status_msg}}' '$status_msg';
+    sub_filter_once off;
+}
+```
+
+这里将错误页面分别放置于`/etc/nginx/epage.d/404/`、`/etc/nginx/epage.d/40x/`、`/etc/nginx/epage.d/50x/`三个目录中，通过`random_index`指令可随机从这些目录中选择后缀为`html`的文件并返回给客户端，也就达到了错误页面随机展示的效果。**注**：1. [internal](http://nginx.org/en/docs/http/ngx_http_core_module.html#internal)指令限制了只能在Nginx内部请求该地址，外部访问将返回404错误；2. 若不需要随机展示的特性，在目录中始终放置一个HTML文件即可。
+
+指令[sub_filter](http://nginx.org/en/docs/http/ngx_http_sub_module.html#sub_filter)用于过滤响应体中的特定字符串并替换为目标字符串。这里主要是替换`{% raw %}{{status}}{% endraw %}`和`{% raw %}{{status_msg}}{% endraw %}`（此为精确匹配，不能含其他字符）两个占位符以显示具体的错误码和错误信息，在错误页面中的合适位置引入这两个占位符即可。另外，`$status_msg`为与变量`$status`对应的状态信息，完整的映射关系见[tmthrgd/nginx-status-text.conf](https://gist.github.com/tmthrgd/3504859568e1dba9ee80e260f974a708)。**注**：`sub_filter_once off;`为启用多次替换，确保页面中所有的占位符均被替换。
+
+在引入该配置时需注意，该配置内容需添加到每个站点（即`server {}`）配置中，暂时不知道如何进行全局配置。为了方便可将以上内容放到单独的文件中（如，`epage.conf`）再通过`include`指令引入该配置。
+
+### 统一展示
+
+统一展示就是所有错误都由相同页面展示，不同的只是显示的错误码和错误信息。以下为该方式的配置内容：
+
+```nginx
+# Obmit the `[=[response]]` syntax to keep the error response code for clients.
+## http://nginx.org/en/docs/http/ngx_http_core_module.html#error_page
+error_page 404 400 401 403 500 502 503 504    /_/;
+
+location /_/ {
+    internal;
+    random_index on;
+
+    # http://nginx.org/en/docs/http/ngx_http_core_module.html#alias
+    # https://stackoverflow.com/questions/10631933/nginx-static-file-serving-confusion-with-root-alias#answer-10647080
+    alias /etc/nginx/epage.d/all/;
+
+    # Replace the placeholders in response content
+    # for showing the corresponding status and message.
+    sub_filter '{{status}}' '$status';
+    sub_filter '{{status_msg}}' '$status_msg';
+    sub_filter_once off;
+}
+```
+
+这里的配置内容和注意事项与`分类展示`的基本相同，所不同的是，错误页面被放置在`/etc/nginx/epage.d/all/`目录中，与分类展示的目录独立，从而可按需自由转换展示模式。
 
 ## Nginx代理第三方http站点静态资源文件
 
@@ -23,8 +119,6 @@ categories:
 我不太喜欢写Word，也好几年几乎没用过了，一般都是直接写在部门的[Wiki](https://www.mediawiki.org/)系统上。不过，一份简单的文档写到Wiki上又不太方便查阅，于是找了找可以在单个HTML里写[Markdown](https://en.wikipedia.org/wiki/Markdown)并直接渲染展示的方案。
 
 很快我就找到了[Strapdown Zeta](https://github.com/chaitin/strapdown-zeta)，其对Mardown的支持较为全面，并且使用很简单，还提供多套主题可自由切换。需要提到的是该库为[Strapdown](https://github.com/arturadib/strapdown)的衍生与改进版本，而`Strapdown`已经很长时间未更新了，选择`Strapdown Zeta`也是看重其活跃度。
-
-<!--more-->
 
 在`Strapdown Zeta`的支持下仅需在`<xmp></xmp>`标签中编写Markdown并在最后引入 http://cdn.ztx.io/strapdown/strapdown.min.js 脚本即可。可惜的是，作者提供的该站点并未启用HTTPS，而我们在[Let's Encrypt](https://letsencrypt.org/)的帮助下已经对部门的所有站点启用了HTTPS。这样，若在页面中引用非HTTPS资源，浏览器默认将阻止该资源的下载。
 
@@ -84,6 +178,8 @@ server {
 最后提醒大家一点是，在网络中对安全要时刻保持警惕，尽可能降低敏感数据泄漏的风险，因此，这里切忌不要将客户端的`Authorization`和`Cookie`转发到目标站点了。
 
 ## Nginx通过Squid穿透防火墙
+
+> Source code: https://github.com/flytreeleft/docker-nginx-gateway/blob/master/examples/vhost.d/static.example.com.conf
 
 **关键字**：
 - Nginx http_proxy：`http_proxy`为Linux中配置启用正向代理的环境变量，很多命令可识别该变量并通过所设定的代理地址请求目标资源
@@ -180,6 +276,8 @@ server {
 
 ### `https://repo.example.com`的反向代理配置
 
+> Source code: https://github.com/flytreeleft/docker-nginx-gateway/blob/master/examples/vhost.d/repo.example.com.conf#L15
+
 ```nginx
 server {
     listen 443 ssl;
@@ -203,6 +301,8 @@ server {
 - Nginx在解析配置时会对`proxy_pass`的目标域名地址进行解析，若是解析失败则会导致Nginx启动异常，因此，这里采用变量方式将解析延迟到需要时，从而避免启动失败
 
 ### `https://mvn.example.com`的反向代理配置
+
+> Source code: https://github.com/flytreeleft/docker-nginx-gateway/blob/master/examples/vhost.d/repo.example.com.conf#L110
 
 需要科普一下的是，在Nexus3中访问某个仓库内的资源的URL结构为`http://<nexus3>/#browse/browse/components:<repo>/`，访问某个资源的URL结构为`http://<nexus3>/repository/<repo>/<asset path>`。其中，`<repo>`为仓库名称，所有类型的仓库均会有`hosted`（私有存储）、`proxy`（代理外部仓库）和`group`（组合同类仓库）三种模式。
 
@@ -402,6 +502,8 @@ server {
 
 ### `https://npm.example.com`的反向代理配置
 
+> Source code: https://github.com/flytreeleft/docker-nginx-gateway/blob/master/examples/vhost.d/repo.example.com.conf#L182
+
 `https://npm.example.com`与`https://mvn.example.com`的规划和注意事项基本一致，只是`npm-hosted`仓库直接使用`hosted`模式，因为NPM依赖包没有快照版本，而`npm-public`仓库依然为`group`模式，用于组合多个第三方仓库。
 
 以下为对`https://npm.example.com`的完整配置：
@@ -452,7 +554,19 @@ server {
 }
 ```
 
+在安装或发布模块时可通过选项`--registry`临时指定目标仓库地址：
+- 安装模块：`npm --registry=https://npm.example.com install <module>`
+- 发布模块：`npm --registry=https://npm.example.com publish <folder>`
+
+也可以替换默认仓库，直接使用私有仓库：`npm config set registry https://npm.example.com`。
+
+若需要还原为默认仓库，则运行命令`npm config set registry https://registry.npmjs.org`。
+
+[登录](https://docs.npmjs.com/cli/adduser)仓库则执行命令`npm login --registry=https://npm.example.com`。
+
 ### `https://dcr.example.com`的反向代理配置
+
+> Source code: https://github.com/flytreeleft/docker-nginx-gateway/blob/master/examples/vhost.d/repo.example.com.conf#L50
 
 在Nexus3中，Docker类型的仓库需要使用不同的端口进行访问，创建仓库时需要为仓库[自行设定](http://www.sonatype.org/nexus/2016/06/29/using-nexus-3-as-a-private-docker-registry/)一个HTTP端口号，然后再通过Nginx将读写请求转发到不同的端口上。
 
@@ -503,3 +617,8 @@ server {
 这里同样需注意以下几个问题：
 - Docker发送的HTTP请求中`User Agent`包含`docker`字符串，因此，如果`$http_user_agent`中没有这个字符串，则视为浏览器访问，直接跳转到`https://repo.example.com`
 - 从Docker的源码中可以发现`HTTP Method`为`HEAD`、`POST`、`PUT`、`DELETE`、`PATCH`均与镜像变更（新增、删除、打标签、更新等）有关，因此，需要将这些请求均转发到`docker-hosted`仓库
+
+在使用时可分别通过以下命令登录仓库以及拉取或推送镜像：
+- 登录仓库：`docker login dcr.example.com`
+- 拉取镜像：`docker pull dcr.example.com/<image name>:<image version>`
+- 推送镜像：`docker push dcr.example.com/<image name>:<image version>`
