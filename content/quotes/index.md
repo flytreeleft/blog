@@ -25,3 +25,7 @@ tags:
 --------------------------------
 > ## If no actions, your dream will still be a dream forever.
 > 如果不付诸行动，你的梦想将永远只是梦想。
+
+--------------------------------
+> ## Human beings are not afraid of the death, but they are just obsessed with something.
+> 人类害怕的并不是死亡本身，只是对某些东西会念念不忘而以。
