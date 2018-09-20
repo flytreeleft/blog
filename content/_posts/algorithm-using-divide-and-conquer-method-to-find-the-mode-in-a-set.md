@@ -3,9 +3,9 @@ layout: post
 title: 算法分析：分治法求解给定集合中的众数及其重数
 date: 2018-09-19 21:38:34
 tags:
-  - 算法分析
   - 分治法
-  - 众数与重数
+  - 众数
+  - 重数
 categories:
   - 算法分析
 ---
@@ -53,6 +53,8 @@ void swap_element(int data[], int index_0, int index_1);
 int main(void) {
     //int data[] = {'a', 'a', 'b', 'b', 'b', '1', '2', '1'};
     int data[] = {2, 4, 7, 8, 5, 6, 5, 5, 6, 7, 1};
+    //int data[] = {10};
+    //int data[] = {1, 2, 3};
     //int data[] = {1, 2, 2, 2, 3, 3, 5, 6, 6, 6, 6};
     //int data[] = {1, 2, 7, 7, 3, 5};
     //int data[] = {3, 6, 7, 6, 4, 5};
@@ -168,6 +170,8 @@ int compare_mode(Mode mode_0, Mode mode_1);
 int main(void) {
     //int data[] = {'a', 'a', 'b', 'b', 'b', '1', '2', '1'};
     int data[] = {2, 4, 7, 8, 5, 6, 5, 5, 6, 7, 1};
+    //int data[] = {10};
+    //int data[] = {1, 2, 3};
     //int data[] = {1, 2, 2, 2, 3, 3, 5, 6, 6, 6, 6};
     //int data[] = {1, 2, 7, 7, 3, 5};
     //int data[] = {3, 6, 7, 6, 4, 5};
