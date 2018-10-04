@@ -70,6 +70,23 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+# Server
+## Docs: https://hexo.io/docs/server.html
+server:
+  port: 5000
+  log: true
+  ip: localhost
+  compress: false
+  header: true
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:flytreeleft/flytreeleft.github.io.git
+  branch: master
+  message: Site updated by hexo
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 
@@ -127,19 +144,11 @@ feed:
   hub:
   content:
 
-# Server
-## Docs: https://hexo.io/docs/server.html
-server:
-  port: 5000
-  log: true
-  ip: localhost
-  compress: false
-  header: true
-
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: git@github.com:flytreeleft/flytreeleft.github.io.git
-  branch: master
-  message: Site updated by hexo
+kramed:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true

@@ -1162,20 +1162,20 @@ hexo-renderer-jade@^0.4.1:
     jade "^1.11.0"
     pug "^2.0.0-rc.1"
 
+hexo-renderer-kramed@^0.1.4:
+  version "0.1.4"
+  resolved "http://registry.npm.taobao.org/hexo-renderer-kramed/download/hexo-renderer-kramed-0.1.4.tgz#bf858485b44618ea1694a6abc2cccbd745478c0f"
+  dependencies:
+    hexo-util "^0.6.0"
+    kramed "^0.5.6"
+    object-assign "^4.1.0"
+    strip-indent "^1.0.1"
+
 hexo-renderer-less@^0.2.0:
   version "0.2.0"
   resolved "http://registry.npm.taobao.org/hexo-renderer-less/download/hexo-renderer-less-0.2.0.tgz#e8dd7f7cf63c7a47ae6cb60a072f1ee0e134b281"
   dependencies:
     less "^2.5.1"
-
-hexo-renderer-marked@^0.3.0:
-  version "0.3.0"
-  resolved "http://registry.npm.taobao.org/hexo-renderer-marked/download/hexo-renderer-marked-0.3.0.tgz#5fa27a361075d148b8ecff29952a3e15e23aed81"
-  dependencies:
-    hexo-util "^0.6.0"
-    marked "^0.3.5"
-    object-assign "^4.1.0"
-    strip-indent "^1.0.1"
 
 hexo-renderer-stylus@^0.3.3:
   version "0.3.3"
@@ -1596,6 +1596,10 @@ kind-of@^4.0.0:
   dependencies:
     is-buffer "^1.1.5"
 
+kramed@^0.5.6:
+  version "0.5.6"
+  resolved "http://registry.npm.taobao.org/kramed/download/kramed-0.5.6.tgz#5c37979bcbb59cbb7a8d231049409298857b5162"
+
 lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "http://registry.npm.taobao.org/lazy-cache/download/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
@@ -1656,10 +1660,6 @@ markdown@~0.5.0:
   resolved "http://registry.npm.taobao.org/markdown/download/markdown-0.5.0.tgz#28205b565a8ae7592de207463d6637dc182722b2"
   dependencies:
     nopt "~2.1.1"
-
-marked@^0.3.5:
-  version "0.3.6"
-  resolved "http://registry.npm.taobao.org/marked/download/marked-0.3.6.tgz#b2c6c618fccece4ef86c4fc6cb8a7cbf5aeda8d7"
 
 match-words@^0.1.0:
   version "0.1.1"
