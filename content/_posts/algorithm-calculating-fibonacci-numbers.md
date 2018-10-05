@@ -62,7 +62,7 @@ uint64_t fibonacci_recursion(uint32_t n) {
 
 以上递归过程可以用下图展示（以`n=9`为例）：
 
-![递归法求解斐波那契数列](http://www.plantuml.com/plantuml/png/SoWkIImgISaluKh9J2zABCXGS5Uevb80WZHBXUYSnAJK75ibDmrBJQLOg6XycWMIX0MoX3cIX3cA3lnoPaXoPYW6ufSpHP8pHJ4JlrOBedGJey84IOK9I0Kiw7Jj80hH-EPS23FWQe32M4ND48hD8S8GQx6AcYAP39D1k1Id748ZGZ6QNg0IWYfCk6gv75BpKe092G00)
+![递归法求解斐波那契数列](https://www.plantuml.com/plantuml/png/SoWkIImgISaluKh9J2zABCXGS5Uevb80WZHBXUYSnAJK75ibDmrBJQLOg6XycWMIX0MoX3cIX3cA3lnoPaXoPYW6ufSpHP8pHJ4JlrOBedGJey84IOK9I0Kiw7Jj80hH-EPS23FWQe32M4ND48hD8S8GQx6AcYAP39D1k1Id748ZGZ6QNg0IWYfCk6gv75BpKe092G00)
 <details>
 <summary>Show graph description</summary>
 <pre>
