@@ -75,7 +75,7 @@ local_search:
 # ---------------
 mathjax:
   enable: true
-  cdn: https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  cdn: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 # Toggle fireworks (IE >= 10)
 # ---------------
