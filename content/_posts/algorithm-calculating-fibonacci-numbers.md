@@ -224,21 +224,21 @@ int main(int argc, char *argv[]) {
     double start_time, end_time;
 
     //printf("Max uint64_t: %ju\n", UINT64_MAX);
-    printf("请输入斐波那契数列长度：");
+    printf("请输入斐波那契数列长度: ");
     scanf("%d", &n);
     if (n >= MAX_FIBONACCI_SIZE) {
-        printf("得到所求数列长度为%d，但本系统支持的最大长度为%d\n", n, MAX_FIBONACCI_SIZE - 1);
+        printf("得到所求数列长度为%d, 但本系统支持的最大长度为%d\n", n, MAX_FIBONACCI_SIZE - 1);
         return 1;
     }
-    printf("斐波那契数列的第%d个数为：\n", n);
+    printf("斐波那契数列的第%d个数为:\n", n);
 
     if (n > 40) {
-        printf("- 递归算法    ：无解（求值过于耗时！）\n");
+        printf("- 递归算法    : 无解（求值过于耗时！）\n");
     } else {
         start_time = current_timestamp();
         fib = fibonacci_recursion(n);
         end_time = current_timestamp();
-        printf("- 递归算法    ：%ju，耗时：%f毫秒\n", fib, end_time - start_time);
+        printf("- 递归算法    : %ju, 耗时: %f毫秒\n", fib, end_time - start_time);
     }
 
     // Note：需要通过格式控制符 %ju 来打印uint64_t类型的数据，
@@ -246,12 +246,12 @@ int main(int argc, char *argv[]) {
     start_time = current_timestamp();
     fib = fibonacci_dynamic_programming(n);
     end_time = current_timestamp();
-    printf("- 动态规划算法：%ju，耗时：%f毫秒\n", fib, end_time - start_time);
+    printf("- 动态规划算法: %ju, 耗时: %f毫秒\n", fib, end_time - start_time);
 
     start_time = current_timestamp();
     fib = fibonacci_loop(n);
     end_time = current_timestamp();
-    printf("- 迭代算法    ：%ju，耗时：%f毫秒\n", fib, end_time - start_time);
+    printf("- 迭代算法    : %ju, 耗时: %f毫秒\n", fib, end_time - start_time);
 
     return 0;
 }
