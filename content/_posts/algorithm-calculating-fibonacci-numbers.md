@@ -37,7 +37,6 @@ F(n - 1) + F(n - 2),    & n >= 2
 $$
 
 本案例所要解决的就是：给定一个整数`n`，求解斐波那契数列中第`n`项的数值。注意，`0`表示第零项，而不是第一项。
-
 <!--more-->
 
 ## 求解方案
@@ -322,7 +321,7 @@ uint64_t fibonacci_loop(uint32_t n) {
 
 // 获取当前系统时间的毫秒值
 double current_timestamp() {
-    struct timeval te; 
+    struct timeval te;
     gettimeofday(&te, NULL);
 
     double msec = te.tv_sec * 1000.0 + (te.tv_usec / 1000.0);
