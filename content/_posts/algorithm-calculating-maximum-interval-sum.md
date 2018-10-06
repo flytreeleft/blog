@@ -121,12 +121,12 @@ SubseqSum max_subseq_sum_force_adv(int seq[], int seq_len) {
 
 $$
 \begin{align}
-s1 &= \max_{1 \leq i \leq \frac{n}{2}} \bigg\{ \sum_{k=i}^{\frac{n}{2}} a_k \bigg\} & \Leftrightarrow s1 &= \max\bigg\{ a_{\frac{n}{2}}, a_{\frac{n}{2}} + a_{\frac{n}{2}-1}, ..., a_{\frac{n}{2}} + a_{\frac{n}{2}-1} + ... + a_2 + a_1 \bigg\} \\
-s2 &= \max_{\frac{n}{2}+1 \leq j \leq n} \bigg\{ \sum_{k=j}^{n} a_k \bigg\} & \Leftrightarrow s1 &= \max\bigg\{ a_{\frac{n}{2}+1}, a_{\frac{n}{2}+1} + a_{\frac{n}{2}+2}, ..., a_{\frac{n}{2}+1} + a_{\frac{n}{2}+2} + ... + a_{n-1} + a_n \bigg\}
+s1 &= \max_{1 \leq i \leq \frac{n}{2}} \bigg\{ \sum_{k=\frac{n}{2}}^{i} a_k \bigg\} & \Leftrightarrow s1 &= \max\bigg\{ a_{\frac{n}{2}}, a_{\frac{n}{2}} + a_{\frac{n}{2}-1}, ..., a_{\frac{n}{2}} + a_{\frac{n}{2}-1} + ... + a_2 + a_1 \bigg\}, i=i-1 \rightarrow 1 \\
+s2 &= \max_{\frac{n}{2}+1 \leq j \leq n} \bigg\{ \sum_{k=\frac{n}{2}+1}^{j} a_k \bigg\} & \Leftrightarrow s2 &= \max\bigg\{ a_{\frac{n}{2}+1}, a_{\frac{n}{2}+1} + a_{\frac{n}{2}+2}, ..., a_{\frac{n}{2}+1} + a_{\frac{n}{2}+2} + ... + a_{n-1} + a_n \bigg\}, j=j+1 \rightarrow n
 \end{align}
 $$
 
-则 $$s1+s2$$ 即为第三种情况的最优解。
+则 $$s1+s2$$ 即为第三种情况的最优解。注意，为了准确传达出向左右两边**推进**求和的过程，这里对求和公式做了变换，让 $k$ 始终从中间位置（即 $$\frac{n}{2}$$ 和 $$\frac{n}{2}+1$$ 处）开始向 $$i$$ 递减或向 $$j$$ 递增。
 
 根据以上分析可编写其实现代码为（时间复杂度为 $O(n\log n)$ ）：
 
