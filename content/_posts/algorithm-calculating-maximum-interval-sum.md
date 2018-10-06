@@ -121,8 +121,8 @@ SubseqSum max_subseq_sum_force_adv(int seq[], int seq_len) {
 
 $$
 \begin{align}
-s1 &= \max_{1 \leq i \leq \frac{n}{2}} \bigg\{ \sum_{k=i}^{\frac{n}{2}} a_k \bigg\} & \Leftrightarrow s1 &= \max\{ a_{\frac{n}{2}}, a_{\frac{n}{2}} + a_{\frac{n}{2}-1}, ..., a_{\frac{n}{2}} + a_{\frac{n}{2}-1} + ... + a_2 + a_1 \} \\
-s2 &= \max_{\frac{n}{2}+1 \leq j \leq n} \bigg\{ \sum_{k=j}^{n} a_k \bigg\} & \Leftrightarrow s1 &= \max\{ a_{\frac{n}{2}+1}, a_{\frac{n}{2}+1} + a_{\frac{n}{2}+2}, ..., a_{\frac{n}{2}+1} + a_{\frac{n}{2}+2} + ... + a_{n-1} + a_n \}
+s1 &= \max_{1 \leq i \leq \frac{n}{2}} \bigg\{ \sum_{k=i}^{\frac{n}{2}} a_k \bigg\} & \Leftrightarrow s1 &= \max\bigg\{ a_{\frac{n}{2}}, a_{\frac{n}{2}} + a_{\frac{n}{2}-1}, ..., a_{\frac{n}{2}} + a_{\frac{n}{2}-1} + ... + a_2 + a_1 \bigg\} \\
+s2 &= \max_{\frac{n}{2}+1 \leq j \leq n} \bigg\{ \sum_{k=j}^{n} a_k \bigg\} & \Leftrightarrow s1 &= \max\bigg\{ a_{\frac{n}{2}+1}, a_{\frac{n}{2}+1} + a_{\frac{n}{2}+2}, ..., a_{\frac{n}{2}+1} + a_{\frac{n}{2}+2} + ... + a_{n-1} + a_n \bigg\}
 \end{align}
 $$
 
@@ -228,7 +228,7 @@ SubseqSum max_subseq_sum_divide_for_center(int seq[], int center, int left, int 
 
 注意：
 - 在实现代码中将上面提到的第三种情况提取出来以便对该特例进行独立分析，也避免了对前面的主过程的阅读和分析造成的干扰
-- 在`max_subseq_sum_divide_for_center`的最后需要对求和区间的起始位置进行修正，具体内容见代码注释
+- 在`max_subseq_sum_divide_for_center`的最后需要对求和区间的起止位置进行修正，具体内容见代码注释
 
 ### 动态规划法
 
