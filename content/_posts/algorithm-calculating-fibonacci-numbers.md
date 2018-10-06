@@ -16,6 +16,8 @@ categories:
 >
 > 若文章中的代码存在问题或逻辑错误，请通过邮件等形式（见文章结尾）告知于本文作者以便及时修正错误或改进代码。
 >
+> 算法系列文章不可避免地会参考和学习众多网友的成果，在行文风格、内容及求解思路上也会进行借鉴，如有侵权嫌疑，请联系本文作者。
+>
 > PS：若为转载该文章，请务必注明来源，本站点欢迎大家转载。
 
 ## 问题描述
@@ -61,7 +63,7 @@ uint64_t fibonacci_recursion(uint32_t n) {
 
 以上递归过程可以用下图展示（以`n=9`为例）：
 
-![递归法求解斐波那契数列](https://www.plantuml.com/plantuml/png/SoWkIImgISaluKh9J2zABCXGS5Uevb80WZHBXUYSnAJK75ibDmrBJQLOg6XycWMIX0MoX3cIX3cA3lnoPaXoPYW6ufSpHP8pHJ4JlrOBedGJey84IOK9I0Kiw7Jj80hH-EPS23FWQe32M4ND48hD8S8GQx6AcYAP39D1k1Id748ZGZ6QNg0IWYfCk6gv75BpKe092G00)
+![递归法求解斐波那契数列](/assets/images/algorithm/fibonacci-recursion-calling-binary-tree.png)
 <details>
 <summary>Show graph description</summary>
 <pre>
