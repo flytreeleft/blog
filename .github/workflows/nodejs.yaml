@@ -14,6 +14,8 @@ jobs:
         node-version: [12.x]
     steps:
     - uses: actions/checkout@v1
+      with:
+        submodules: ${{ true }}
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -24,9 +26,6 @@ jobs:
         yarn install
         npm run clean
         npm run _build -- --config config.yml,github.yml
-        ls -al dist/
-        cp README.md dist/
-        cat dist/the-evil-behaviors/index.html
     # https://github.com/marketplace/actions/release-github-pages
     # https://github.com/peaceiris/actions-gh-pages
     - name: Deploy Github Pages
