@@ -2,7 +2,7 @@
 
 set -e
 
-GIT_REPO="${GITHUB_PAGES_REPO_AUTHOR}/${{GITHUB_PAGES_REPO_NAME}}"
+GIT_REPO="${GITHUB_PAGES_REPO_AUTHOR}/${GITHUB_PAGES_REPO_NAME}"
 
 # https://github.com/peaceiris/actions-gh-pages/blob/master/entrypoint.sh
 function print_error() {
@@ -73,7 +73,7 @@ git status
 
 git commit -m "Release: ${COMMIT_MESSAGE}"
 
-print_info "Push changes to $GITHUB_PAGES_RELEASE_BRANCH"
-git push ${remote_repo} $GITHUB_PAGES_RELEASE_BRANCH
+print_info "Push changes to ${GITHUB_PAGES_RELEASE_BRANCH}"
+git push ${remote_repo} ${GITHUB_PAGES_RELEASE_BRANCH}
 
 print_info "Finish"
