@@ -17,7 +17,7 @@
     "_hexo": "./node_modules/.bin/hexo"
   },
   "hexo": {
-    "version": "3.4.2"
+    "version": "3.9.0"
   },
   "dependencies": {
     "hexo": "^3.3.5",
