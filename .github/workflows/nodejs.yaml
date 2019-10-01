@@ -24,7 +24,6 @@ jobs:
         yarn install
         npm run clean
         npm run _build -- --config config.yml,github.yml
-        [ -e _multiconfig.yml ] && rm -f _multiconfig.yml
         ls -al dist/
         cp README.md dist/
         cat dist/the-evil-behaviors/index.html

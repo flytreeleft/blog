@@ -51,7 +51,7 @@ git config --global user.email "${COMMIT_EMAIL}"
 git config --global user.name "${COMMIT_NAME}"
 
 
-print_info "Clone ${GITHUB_PAGES_REPO_NAME}"
+print_info "Clone '${GITHUB_PAGES_REPO_NAME}'"
 cd ${GITHUB_WORKSPACE}
 git clone ${remote_repo}
 
@@ -63,8 +63,6 @@ git status
 
 print_info "Copy build from '../${PROJECT_BUILD_FOLDER}/'"
 cp -r ../${PROJECT_BUILD_FOLDER}/* .
-
-cat ../${PROJECT_BUILD_FOLDER}/the-evil-behaviors/index.html
 
 print_info "Commit changes with message: ${COMMIT_MESSAGE}"
 git add .
