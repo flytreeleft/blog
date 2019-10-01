@@ -20,7 +20,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Build with NPM
       run: |
-        npm install
+        npm install -g yarn
+        yarn install
         npm run clean
         npm run _build -- --config config.yml,github.yml
         rm -f _multiconfig.yml
