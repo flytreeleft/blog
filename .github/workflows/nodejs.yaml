@@ -15,8 +15,6 @@ jobs:
     steps:
     - name: Pull source code
       uses: actions/checkout@v1
-      with:
-        submodules: ${{ true }}
     - name: Pull Hexo Theme - Melody
       uses: actions/checkout@v1
       with:
