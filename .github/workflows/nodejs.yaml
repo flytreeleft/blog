@@ -31,6 +31,8 @@ jobs:
         yarn install
         npm run clean
         npm run _build -- --config config.yml,github.yml
+        ls -al themes/ themes/melody/
+        cp README.md dist/
     # https://github.com/marketplace/actions/release-github-pages
     # https://github.com/peaceiris/actions-gh-pages
     - name: Deploy Github Pages
