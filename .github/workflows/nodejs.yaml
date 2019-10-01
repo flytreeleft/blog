@@ -16,13 +16,14 @@ jobs:
     - name: Pull source code
       uses: actions/checkout@v1
       with:
-        path: .
+        # Note: the default path will be the repository name
+        path: code/
     - name: Pull Hexo Theme - Melody
       uses: actions/checkout@v1
       with:
         repository: flytreeleft/hexo-theme-melody
         ref: master
-        path: themes/melody
+        path: code/themes/melody/
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -33,7 +34,6 @@ jobs:
         yarn install
         npm run clean
         npm run _build -- --config config.yml,github.yml
-        ls -al themes/ themes/melody/
         cp README.md dist/
     # https://github.com/marketplace/actions/release-github-pages
     # https://github.com/peaceiris/actions-gh-pages
