@@ -59,14 +59,20 @@ print_info "Clean old files by running $GITHUB_PAGES_CLEANUP_SCRIPT"
 cd ./$GITHUB_PAGES_REPO_NAME
 eval "$GITHUB_PAGES_CLEANUP_SCRIPT"
 
+git status
+
 print_info "Copy build from $PROJECT_BUILD_FOLDER"
 cd ../$PROJECT_BUILD_FOLDER
 cp -R * ../$GITHUB_PAGES_REPO_NAME
+
+cat the-evil-behaviors/index.html
 
 print_info "Commit changes with message: $COMMIT_MESSAGE"
 cd ../$GITHUB_PAGES_REPO_NAME
 git add .
 git add -A
+git status
+
 git commit -m "Release: $COMMIT_MESSAGE"
 
 print_info "Push changes to $GITHUB_PAGES_RELEASE_BRANCH"
