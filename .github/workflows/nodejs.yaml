@@ -26,6 +26,7 @@ jobs:
         npm run _build -- --config config.yml,github.yml
         rm -f _multiconfig.yml
         cp README.md dist/
+        cat dist/the-evil-behaviors/index.html
     # https://github.com/marketplace/actions/release-github-pages
     # https://github.com/peaceiris/actions-gh-pages
     - name: Deploy Github Pages

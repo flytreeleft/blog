@@ -2,7 +2,7 @@
 
 set -e
 
-GIT_REPO="${GITHUB_PAGES_REPO_AUTHOR}/${GITHUB_PAGES_REPO_NAME}"
+GIT_REPO="${GITHUB_PAGES_REPO_AUTHOR}/${{GITHUB_PAGES_REPO_NAME}}"
 
 # https://github.com/peaceiris/actions-gh-pages/blob/master/entrypoint.sh
 function print_error() {
@@ -51,29 +51,27 @@ git config --global user.email "${COMMIT_EMAIL}"
 git config --global user.name "${COMMIT_NAME}"
 
 
-print_info "Clone $GITHUB_PAGES_REPO_NAME"
-cd $GITHUB_WORKSPACE
+print_info "Clone ${GITHUB_PAGES_REPO_NAME}"
+cd ${GITHUB_WORKSPACE}
 git clone ${remote_repo}
 
-print_info "Clean old files by running $GITHUB_PAGES_CLEANUP_SCRIPT"
-cd ./$GITHUB_PAGES_REPO_NAME
-eval "$GITHUB_PAGES_CLEANUP_SCRIPT"
+print_info "Clean old files by running '${GITHUB_PAGES_CLEANUP_SCRIPT}'"
+cd ./${GITHUB_PAGES_REPO_NAME}
+eval "${GITHUB_PAGES_CLEANUP_SCRIPT}"
 
 git status
 
-print_info "Copy build from $PROJECT_BUILD_FOLDER"
-cd ../$PROJECT_BUILD_FOLDER
-cp -R * ../$GITHUB_PAGES_REPO_NAME
+print_info "Copy build from '../${PROJECT_BUILD_FOLDER}/'"
+cp -r ../${PROJECT_BUILD_FOLDER}/* .
 
-cat the-evil-behaviors/index.html
+cat ../${PROJECT_BUILD_FOLDER}/the-evil-behaviors/index.html
 
-print_info "Commit changes with message: $COMMIT_MESSAGE"
-cd ../$GITHUB_PAGES_REPO_NAME
+print_info "Commit changes with message: ${COMMIT_MESSAGE}"
 git add .
 git add -A
 git status
 
-git commit -m "Release: $COMMIT_MESSAGE"
+git commit -m "Release: ${COMMIT_MESSAGE}"
 
 print_info "Push changes to $GITHUB_PAGES_RELEASE_BRANCH"
 git push ${remote_repo} $GITHUB_PAGES_RELEASE_BRANCH
