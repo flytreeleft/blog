@@ -13,9 +13,16 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-    - uses: actions/checkout@v1
+    - name: Pull source code
+      uses: actions/checkout@v1
       with:
         submodules: ${{ true }}
+    - name: Pull Hexo Theme - Melody
+      uses: actions/checkout@v1
+      with:
+        repository: flytreeleft/hexo-theme-melody
+        ref: master
+        path: themes/melody
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
