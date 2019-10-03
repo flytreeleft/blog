@@ -95,15 +95,13 @@ copyright: false
 
 ## 项目经验
 
-- 在部门内引入并推广Maven项目构建、CI/CD持续集成、Git源码管理、统一登录（SSO）、代码分支管理、Wiki文档管理、代码质量控制、缺陷管理等开发机制和流程，
-  并独立搭建相关环境，进而提升部门产品的开发、测试、发布效率
+- 在部门内引入并推广Maven项目构建、CI/CD持续集成、Git源码管理、统一登录（SSO）、代码分支管理、Wiki文档管理、代码质量控制、缺陷管理等开发机制和流程，并独立搭建相关环境，进而提升部门产品的开发、测试、发布效率
 - 将部门内的运维工具、产品演示服务、产品演示数据库等全部容器化部署和管理，从而降低运维难度和工作量
 - 尝试部署高可用的[Kubernetes](https://kubernetes.io/)集群，并在其上搭建DevOps和日志分析平台，但由于机房环境和主机设备不稳定等因素影响而始终未能如愿
 - 编写[Ansible Playbook](https://www.ansible.com/)脚本为客户搭建具备3个Master节点的高可用Kubernetes集群环境，并在其上部署和运行部门的产品，实现运维产品服务的高可用
 - 负责分析并查找产品性能低下、高内存占用、数据库连接池耗尽等问题，通过JVM内存分析、接口调用监控等方式最终定位根源并有针对性地提出改进和规避方案
 - 负责维护和开发部门的运维产品，设计并实现多个核心组件和功能模块，如，CI关系视图、数据归档、数据访问权限控制、Hibernate热加载/热更新BO Class等
-- 自行设计并实现类似[Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/syntax/)的任务调度和编排机制，
-  支持任务调度、解析和执行Pipeline脚本（Groovy）、本地或远端执行Bash脚本、文件传输、运行Ansible Playbook等功能
+- 自行设计并实现类似[Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/syntax/)的任务调度和编排机制，支持任务调度、解析和执行Pipeline脚本（Groovy）、本地或远端执行Bash脚本、文件传输、运行Ansible Playbook等功能
 - 基于[mxGraph](https://github.com/jgraph/mxgraph) JS图形库设计并开发CMDB资产生命周期（入库、出库、维护等）设计器
 - 基于[Activiti](https://github.com/Activiti/Activiti) 5流程引擎做业务层封装，支持在不修改源码的基础上做业务功能扩展和增强：外部人员组织机构适配；流程跳转、委办、退回、会签等
 - 基于[Apache Camel](https://camel.apache.org/)实现多类型接收端点的消息发送框架
