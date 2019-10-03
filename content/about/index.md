@@ -43,7 +43,7 @@ copyright: false
 
 ### [nexus3-keycloak-plugin](https://github.com/flytreeleft/nexus3-keycloak-plugin)
 
-支持Keycloak用户统一认证的Sonatype Nexus3插件。
+支持[Keycloak](https://www.keycloak.org/)用户统一认证的[Sonatype Nexus3](https://www.sonatype.com/nexus-repository-oss)插件。
 
 其支持并提供如下特性：
 - 将Keycloak的Client Role、Realm Role、Realm Group三类角色/组映射为Nexus3的角色，以支持不同层级的用户权限控制需求
@@ -52,7 +52,7 @@ copyright: false
 
 ### [docker-nginx-gateway](https://github.com/flytreeleft/docker-nginx-gateway)
 
-Nginx网关（反向代理）的Docker镜像构建脚本。
+[Nginx](https://www.nginx.com/)网关（反向代理）的Docker镜像构建脚本。
 
 其提供特性如下：
 - 可启用[Let’s Encrypt](https://letsencrypt.org/) HTTPS站点
@@ -62,14 +62,14 @@ Nginx网关（反向代理）的Docker镜像构建脚本。
 - 支持反向代理HTTP和TCP流量
 - 每个域名采用独立的配置文件，根据实际需求以提供静态站点服务或反向代理至后端服务
 - 支持在Kubernetes中以多个Pod副本运行
-- 支持访问日志按天滚动创建并在日志文件中加入日期，如，`access_2018-04-26.log`
+- 支持访问日志按天滚动写入日志文件，如，`access_2018-04-26.log`
 - 支持通过OpenID（使用[lua-resty-openidc](https://github.com/zmartzone/lua-resty-openidc)实现）进行用户访问认证，并可将指定IP加入白名单
 - 可在构建镜像时设定是否引入[GeoIp2](https://github.com/leev/ngx_http_geoip2_module)地址库
 - 集成[Gixy](https://github.com/yandex/gixy)以分析和检查Nginx配置是否存在安全问题
 
 ### [GtkShot](https://github.com/flytreeleft/GtkShot)
 
-基于GTK2的Linux屏幕截图工具。
+基于[GTK2](https://developer.gnome.org/gtk2/)的Linux屏幕截图工具。
 
 其具备如下特性：
 - 支持快捷键撤销、保存、移动选取等操作
