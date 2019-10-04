@@ -22,22 +22,15 @@ copyright: false
 
 ## 专业技能
 
-- 目前（2019年）已从事8年Java项目开发，具备J2EE项目开发、项目架构设计、代码优化与调试经验
-- 熟悉Web前端和后端开发流程和相关技术，掌握Spring、Spring MVC、Hibernate、Apache Shiro、MyBatis、jQuery、Vue.js、Node.js、Webpack、Electron等开发框架和开发工具
-- 具有JVM调试与调优经验，能够通过jstack、jmap、Eclipse Memory Analyzer等工具定位堆栈溢出、线程死锁等问题
-- 能够熟练编写JUnit单元测试，并具备Apache JMeter脚本编写经验，可模拟用户登录、点击、创建模拟数据等操作以进行产品功能和服务压力测试
-- 熟悉Linux系统运维，能够熟练编写Bash脚本、Ansible Playbooks，具有Gitlab、Jenkins、Nexus3、MediaWiki、Keycloak、Nginx、Keepalived、HAProxy、Squid等工具的部署、配置、集成及维护经验
-- 熟悉Docker等容器化技术，能够编写Dockerfile并进行容器管理和应用部署
-- 具备良好的技术文档编写能力和习惯，对代码质量和规范的要求同样严格
-- 具备静态和动态网站运维和管理经验
-- 具备在阿里云、华为云上创建、管理云服务器的经验
-- 具备CI/CD工具链的部署、维护和管理经验
-- 具备Kubernetes集群（高可用）部署和维护经验，能够在Kubernetes集群中部署、配置和管理各种应用
-- 具备基本的VMware vCenter管理和维护经验
-- 具备ELK（Elasticsearch、Logstash、Kibana）、Grafana日志分析平台的部署、配置和维护经验
-- 具备基于Istio的微服务基础设施部署、配置和维护经验
-- 了解分布式文件系统，具备GlusterFS、Ceph部署及使用经验
-- 了解Android应用的开发，并具备基础的开发经验和能力
+- 从事8年Java项目开发，具备J2EE项目开发、项目架构设计、代码优化与调试经验
+- 熟悉Web前端和后端开发流程及相关技术：Spring、Spring MVC、Hibernate、MyBatis、jQuery、Vue.js、Node.js、Webpack、Electron、TypeScript、ES6等
+- 熟悉MySQL、H2、Oracle等关系数据库，可熟练编写SQL代码进行简单或复杂的业务查询，具备MySQL主从架构部署经验
+- 具备JVM调试与调优经验，能够通过jstack、jmap、Eclipse Memory Analyzer等工具定位堆栈溢出、线程死锁等问题
+- 能够熟练编写JUnit单元测试，并具备Apache JMeter性能测试和脚本编写经验
+- 具备良好的技术文档编写能力，对代码质量和规范的要求严格，同时乐于以文档形式与他人分享技术难点攻克技巧
+- 熟悉Linux系统运维，能够熟练编写Bash、Ansible Playbooks等脚本，也具备一定的Python、Lua等编程基础
+- 具备CI/CD、DevOps工具集的部署、维护和管理经验：Gitlab、Jenkins、Nexus3、Nginx、Sonar、MediaWiki、Keycloak、Rocket.Chat、ELK、Grafana等
+- 具备Kubernetes高可用集群的部署和维护经验，能够在Kubernetes集群中部署、配置和管理各种应用，熟悉Helm的使用
 
 ## 开源项目
 
