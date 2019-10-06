@@ -27,7 +27,7 @@ copyright: false
 - 熟悉MySQL、H2、Oracle等关系数据库，可熟练编写SQL代码进行简单或复杂的业务查询，具备MySQL主从架构部署经验
 - 具备JVM调试与调优经验，能够通过jstack、jmap、Eclipse Memory Analyzer等工具定位堆栈溢出、线程死锁等问题
 - 能够熟练编写JUnit单元测试，并具备Apache JMeter性能测试和脚本编写经验
-- 具备良好的技术文档编写能力，对代码质量和规范的要求严格，同时乐于以文档形式与他人分享技术难点攻克技巧
+- 具备良好的技术文档编写能力，对代码质量和规范的要求严格，同时乐于以文档形式与他人分享技术难点攻关技巧
 - 熟悉Linux系统运维，能够熟练编写Bash、Ansible Playbooks等脚本，也具备一定的Python、Lua等编程基础
 - 具备CI/CD、DevOps工具集的部署、维护和管理经验：Gitlab、Jenkins、Nexus3、Nginx、Sonar、MediaWiki、Keycloak、Rocket.Chat、ELK、Grafana等
 - 具备Kubernetes高可用集群的部署和维护经验，能够在Kubernetes集群中部署、配置和管理各种应用，熟悉Helm的使用
