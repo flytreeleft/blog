@@ -25,18 +25,19 @@ copyright: false
 - 从事8年Java项目开发，具备J2EE项目开发、项目架构设计、代码优化与调试经验
 - 熟悉Web前端和后端开发流程及相关技术：Spring、Spring MVC、Hibernate、MyBatis、jQuery、Vue.js、Node.js、Webpack、Electron、TypeScript、ES6等
 - 熟悉MySQL、H2、Oracle等关系数据库，可熟练编写SQL代码进行简单或复杂的业务查询，具备MySQL主从架构部署经验
-- 具备JVM调试与调优经验，能够通过jstack、jmap、Eclipse Memory Analyzer等工具定位堆栈溢出、线程死锁等问题
+- 具备JVM调试与调优经验，能够分析并定位堆栈溢出、线程死锁等问题，涉及工具：jvisualvm、jstack、jmap、Eclipse Memory Analyzer、Arthas等
 - 能够熟练编写JUnit单元测试，并具备Apache JMeter性能测试和脚本编写经验
+- 具备基础的Android、Flutter开发能力，能够快速适应Android应用的开发工作
 - 具备良好的技术文档编写能力，对代码质量和规范的要求严格，同时乐于以文档形式与他人分享技术难点攻关技巧
 - 熟悉Linux系统运维，能够熟练编写Bash、Ansible Playbooks等脚本，也具备一定的Python、Lua等编程基础
-- 具备CI/CD、DevOps工具集的部署、维护和管理经验：Gitlab、Jenkins、Nexus3、Nginx、Sonar、MediaWiki、Keycloak、Rocket.Chat、ELK、Grafana等
+- 具备CI/CD、DevOps工具集的部署、维护和管理经验：Gitlab、Jenkins、Nexus3、Nginx、Sonar、Keycloak、ELK等
 - 具备Kubernetes高可用集群的部署和维护经验，能够在Kubernetes集群中部署、配置和管理各种应用，熟悉Helm的使用
 
 ## 开源项目
 
 ### [nexus3-keycloak-plugin](https://github.com/flytreeleft/nexus3-keycloak-plugin)
 
-支持[Keycloak](https://www.keycloak.org/)用户统一认证的[Sonatype Nexus3](https://www.sonatype.com/nexus-repository-oss)插件。
+支持[Keycloak](https://www.keycloak.org/)用户统一登录认证的[Sonatype Nexus3](https://www.sonatype.com/nexus-repository-oss)插件。
 
 其支持并提供如下特性：
 - 将Keycloak的Client Role、Realm Role、Realm Group三类角色/组映射为Nexus3的角色，以支持不同层级的用户权限控制需求
@@ -90,15 +91,15 @@ copyright: false
 
 - 在部门内引入并推广Maven项目构建、CI/CD持续集成、Git源码管理、统一登录（SSO）、代码分支管理、Wiki文档管理、代码质量控制、缺陷管理等开发机制和流程，并独立搭建相关环境，进而提升部门产品的开发、测试、发布效率
 - 将部门内的运维工具、产品演示服务、产品演示数据库等全部容器化部署和管理，从而降低运维难度和工作量
-- 尝试部署高可用的[Kubernetes](https://kubernetes.io/)集群，并在其上搭建DevOps和日志分析平台，但由于机房环境和主机设备不稳定等因素影响而始终未能如愿
+- 尝试部署高可用的[Kubernetes](https://kubernetes.io/)集群，并在其上搭建DevOps和日志分析平台
 - 编写[Ansible Playbook](https://www.ansible.com/)脚本为客户搭建具备3个Master节点的高可用Kubernetes集群环境，并在其上部署和运行部门的产品，实现运维产品服务的高可用
 - 负责分析并查找产品性能低下、高内存占用、数据库连接池耗尽等问题，通过JVM内存分析、接口调用监控等方式最终定位根源并有针对性地提出改进和规避方案
 - 负责维护和开发部门的运维产品，设计并实现多个核心组件和功能模块，如，CI关系视图、数据归档、数据访问权限控制、Hibernate热加载/热更新BO Class等
 - 自行设计并实现类似[Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/syntax/)的任务调度和编排机制，支持任务调度、解析和执行Pipeline脚本（Groovy）、本地或远端执行Bash脚本、文件传输、运行Ansible Playbook等功能
 - 基于[mxGraph](https://github.com/jgraph/mxgraph) JS图形库设计并开发CMDB资产生命周期（入库、出库、维护等）设计器
-- 基于[Activiti](https://github.com/Activiti/Activiti) 5流程引擎做业务层封装，支持在不修改源码的基础上做业务功能扩展和增强：外部人员组织机构适配；流程跳转、委办、退回、会签等
+- 基于[Activiti](https://github.com/Activiti/Activiti) 5流程引擎做业务层封装，支持在不修改源码的基础上做业务功能扩展和增强：外部人员组织机构的适配、流程跳转、任务委办、退回任务、任务会签、流程回演等
 - 基于[Apache Camel](https://camel.apache.org/)实现多类型接收端点的消息发送框架
-- 基于[Vue.js](https://vuejs.org)设计并开发UI设计器，但由于设计的复杂度、个人整体把控能力不足等问题而最终被搁置
+- 基于[Vue.js](https://vuejs.org)设计并开发UI设计器
 - 基于[YAVI Java API](https://github.com/yavijava/yavijava)开发VMware vCenter集群管理的组件库，支持对虚拟主机、网络等资源的管理
 - 基于[fabric8io/kubernetes-client](https://github.com/fabric8io/kubernetes-client)设计并开发多租户平台，实现将部门的运维产品按租户部署至Kubernetes集群并独立运行和访问
 - 基于[Electron](https://electronjs.org/)为客户开发自助服务终端App，支持身份证读取和二维码扫描功能
