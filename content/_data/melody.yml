@@ -18,6 +18,7 @@ menu:
 # Nav settings
 # ---------------
 social:
+  home: https://social.crazydan.org/main/public
   github: https://github.com/flytreeleft
   twitter: https://twitter.com/flytreeleft
 
