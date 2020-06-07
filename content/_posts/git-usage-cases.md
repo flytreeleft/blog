@@ -45,9 +45,65 @@ git push -u origin master
 - 在第二步操作后，当前目录将会只剩下子目录中的文件
 - 最好在新的目录中进行上述操作：可以直接clone，也可以从复制已有项目到其他目录
 
+若要拆分多个子目录，可通过如下命令筛选出目标目录并保留其历史：
+
+```bash
+git filter-branch \
+    --index-filter ' \
+        git rm --cached -qr --ignore-unmatch -- . \
+        && git reset -q $GIT_COMMIT -- \
+            path/to/dir1 path/to/dir2 path/to/file1 path/to/file2 ... \
+        ' \
+    --prune-empty -- --all
+```
+
 ### 参考
 
 - [Splitting a subfolder out into a new repository](https://help.github.com/articles/splitting-a-subfolder-out-into-a-new-repository/)
+
+## 迁移子分支至新仓库
+
+### 场景
+
+某个项目仓库中可能存在多个功能特性（features）分支，在一段时候后，基于产品功能规划和开发维护等方面的考虑，
+需要将某些特性分支独立成新的项目或子项目，将其迁移到新的仓库中。
+
+### 操作
+
+```bash
+# Push 'feature-branch' to the branch 'master' (or others) of new repository
+git push url://to/new/repository.git feature-branch:master
+
+# [Optional] Delete the 'feature-branch' from current repository
+git branch -d feature-branch
+
+# Clone codes from new repository
+git clone url://to/new/repository.git feature-branch
+```
+
+### 参考
+
+- [How do I move a Git branch out into its own repository?](https://stackoverflow.com/questions/2227062/how-do-i-move-a-git-branch-out-into-its-own-repository)
+
+## 合并多个仓库到一个仓库
+
+```bash
+# 分别在各个源仓库中，创建目标目录（即，在合并后的仓库中的目录），再将其全部代码转移到该目录中
+dir="<target dir>"
+mkdir $dir
+git mv !($dir) $dir
+git commit -m "迁移代码至目录$dir"
+
+# 在目标仓库中，依次将各个源仓库合并至本仓库中
+git remote add source /path/to/source/repo/dir
+git fetch source
+
+git merge --allow-unrelated-histories source/master
+## 添加并提交冲突文件（没有时，可不需要该操作）
+git add .gitignore && git commit
+
+git remote remove source
+```
 
 ## 修改变更提交人的信息
 
@@ -96,30 +152,6 @@ git push --force origin master
 ### 参考
 
 - [Could I change my name and surname in all previous commits?](https://stackoverflow.com/questions/4493936/could-i-change-my-name-and-surname-in-all-previous-commits)
-
-## 迁移子分支至新仓库
-
-### 场景
-
-某个项目仓库中可能存在多个功能特性（features）分支，在一段时候后，基于产品功能规划和开发维护等方面的考虑，
-需要将某些特性分支独立成新的项目或子项目，将其迁移到新的仓库中。
-
-### 操作
-
-```bash
-# Push 'feature-branch' to the branch 'master' (or others) of new repository
-git push url://to/new/repository.git feature-branch:master
-
-# [Optional] Delete the 'feature-branch' from current repository
-git branch -d feature-branch
-
-# Clone codes from new repository
-git clone url://to/new/repository.git feature-branch
-```
-
-### 参考
-
-- [How do I move a Git branch out into its own repository?](https://stackoverflow.com/questions/2227062/how-do-i-move-a-git-branch-out-into-its-own-repository)
 
 ## 修改历史提交备注信息
 
