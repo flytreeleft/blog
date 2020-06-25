@@ -21,9 +21,11 @@ jobs:
     - name: Restore last modified time
       run: |
         # https://github.com/theme-next/hexo-theme-next/issues/893#issuecomment-498080459
+        set -ex
         git ls-files -z | while read -d '' path; do touch -d "$(git log -1 --format="@%ct" "$path")" "$path"; done
 
     - name: Use Node.js ${{ matrix.node-version }}
+      # https://github.com/actions/setup-node
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
