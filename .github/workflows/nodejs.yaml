@@ -24,6 +24,8 @@ jobs:
         post_dir=content/_posts
         git ls-files -z "$post_dir" \
           | while read -d '' path; do \
+              echo "$path"; \
+              git log -- "$path"; \
               git log -1 -- "$path"; \
               git log -1 --format="@%ct" -- "$path"; \
             done
