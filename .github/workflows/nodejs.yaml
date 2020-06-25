@@ -20,7 +20,13 @@ jobs:
         submodules: true
     - name: Restore last modified time
       run: |
-        bash build/update-post-timestamp.sh
+        # bash build/update-post-timestamp.sh
+        post_dir=content/_posts
+        git ls-files -z "$post_dir" \
+          | while read -d '' path; do \
+              git log -1 -- "$path"; \
+              git log -1 --format="@%ct" -- "$path"; \
+            done
 
     - name: Use Node.js ${{ matrix.node-version }}
       # https://github.com/actions/setup-node
