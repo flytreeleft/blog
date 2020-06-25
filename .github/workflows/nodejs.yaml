@@ -17,9 +17,9 @@ jobs:
       # https://github.com/actions/checkout
       uses: actions/checkout@v2
       with:
-        # 显式指定拉取master分支，确保各文件的提交历史是完整的，以便于得到各post的更新时间
-        # 其默认只有最后一次提交的历史信息，会导致所有post的更新时间都是最后一次的提交时间
-        ref: master
+        # 拉取全部（=0）历史信息，确保各文件的提交历史是完整的，以便于得到各post的更新时间
+        # 其默认只拉取最后一次提交（=1）的历史信息，这会导致所有post的更新时间都是最后一次的提交时间
+        fetch-depth: 0
         submodules: true
     - name: Restore last modified time
       run: |
