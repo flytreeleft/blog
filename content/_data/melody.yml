@@ -104,6 +104,8 @@ disqus:
   enable: false
   shortname: flytreeleft-blog
   count: true # or false. It show the comments of your post
+commento:
+  enable: true
 
 # Footer Settings
 # ---------------
