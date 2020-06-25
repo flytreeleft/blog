@@ -17,8 +17,6 @@ jobs:
       # https://github.com/actions/checkout
       uses: actions/checkout@v2
       with:
-        # Note: the default path will be the repository name
-        path: code/
         submodules: true
     - name: Restore last modified time
       run: |
