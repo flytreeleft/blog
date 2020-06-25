@@ -27,3 +27,12 @@ categories:
 - 相关： [360与QQ大战](https://zh.wikipedia.org/wiki/%E5%A5%87%E8%99%8E360%E4%B8%8E%E8%85%BE%E8%AE%AFQQ%E4%BA%89%E6%96%97%E4%BA%8B%E4%BB%B6)、[菜鸟与顺丰互怼](http://wiki.mbalib.com/wiki/%E9%A1%BA%E4%B8%B0%E8%8F%9C%E9%B8%9F%E4%B9%8B%E4%BA%89)
 - 评语： 用户在我手，天下跟我走。看不惯？你咬我呀！
 - 观点： 在「封闭平台」中，用户从一开始便是平台的筹码，当平台「自认为」利益受到其他平台威胁时，便会不惜以损害用户体验的方式进行反击，其平日讨好用户的伪善面目便暴露无疑。平台越大，心眼越小，不安全感越严重，思路越单一，解决问题的方式越是直接粗暴。
+
+
+## 以开放之名吸引了用户，壮大后，再关起门来「圈养」用户
+
+- 案例： [OSChina](https://www.oschina.net/)禁止匿名用户查看文章/新闻等的评论
+- 来源： https://www.oschina.net/news/116713/gnome-mutter-cogl-cleanup#comments
+- 评语： 在当今的互联网商业模式（免费）下，用户都只是被「圈养的猪」
+
+![OSChina禁止匿名用户查看文章评论@2020-06-05](/assets/images/the-evil-behaviors/oschina-not-allow-to-view-comments-for-anonymous-user.png)
