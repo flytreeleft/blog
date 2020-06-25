@@ -20,14 +20,15 @@ jobs:
         # Note: the default path will be the repository name
         path: code/
         submodules: true
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
     - name: Restore last modified time
       run: |
         # https://github.com/theme-next/hexo-theme-next/issues/893#issuecomment-498080459
         git ls-files -z | while read -d '' path; do touch -d "$(git log -1 --format="@%ct" "$path")" "$path"; done
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
     - name: Build with NPM
       run: |
         npm install -g yarn
