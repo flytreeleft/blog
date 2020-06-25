@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 post_dir=content/_posts
 
