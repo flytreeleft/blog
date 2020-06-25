@@ -37,7 +37,7 @@ highlight_theme: default
 # Post info settings
 # ---------------
 post_meta:
-  date_type: created # created or updated
+  date_type: updated # created or updated
   categories: true
   tags: true
   top_img:
