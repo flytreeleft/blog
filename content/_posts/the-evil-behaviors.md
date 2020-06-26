@@ -37,6 +37,7 @@ categories:
 
 - 案例： [OSChina](https://www.oschina.net/)禁止匿名用户查看文章/新闻等的评论
 - 来源： https://www.oschina.net/news/116713/gnome-mutter-cogl-cleanup#comments
-- 评语： 在当今的互联网商业模式（免费）下，用户都只是被「圈养的猪」
+- 评语： 在当今的互联网商业模式下，用户都只是被「圈养的猪」
+- 观点： 所有数据均属于平台，包括用户隐私，以及用户的一切创造，用户只有**使用权**，没有**所有权**，更没有**处置权**，这便是「免费的代价」。在这样的模式下，用户只是平台的奴隶，为企业挣钱的工具。
 
 ![OSChina禁止匿名用户查看文章评论@2020-06-05](/assets/images/the-evil-behaviors/oschina-not-allow-to-view-comments-for-anonymous-user.png)
