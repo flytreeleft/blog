@@ -1,0 +1,143 @@
+  # main menu navigation url and icon
+# 配置菜单导航的名称、路径和图标icon.
+menu:
+  Home:
+    url: /
+    icon: fa-home
+  Tags:
+    url: /tags
+    icon: fa-tags
+  Archives:
+    url: /archives
+    icon: fa-archive
+  Categories:
+    url: /categories
+    icon: fa-bookmark
+  Quotes:
+    url: /quotes
+  About:
+    url: /about
+    icon: fa-user-circle-o
+
+# index page dream text,
+# 配置首页显示"梦想"的语句.
+dream:
+  enable: true
+  text: The best preparation for tomorrow is doing your best today.
+
+# Configure website favicon and LOGO
+# 配置网站favicon和网站LOGO
+favicon: /assets/profile/favicon.png
+logo: /assets/profile/avatar.jpg
+
+# profile in about page, including avatars, career, and personal introductions.
+# 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
+profile:
+  avatar: /assets/profile/avatar.jpg
+  career: Software Engineer
+  introduction: If you wish to succeed, you should use persistence as your good friend, experience as your reference, prudence as your brother and hope as your sentry.
+
+# config my projects informations in about page.
+# If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
+# 在“关于”页面配置"我的项目"信息，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
+myProjects:
+  enable: false
+  data:
+    hexo-theme-matery:
+      icon: fa-github
+      iconBackground: 'linear-gradient(to bottom right, #1cf196 0%, #36a6bf 100%)'
+      url: http://github.com/blinkfox/hexo-theme-matery
+      desc: This is a Hexo blog theme with 'Material Design' and responsive design.
+    zealt:
+        icon: fa-code
+        iconBackground: 'linear-gradient(to bottom right, #fc5f3c 0%, #ff55d3 100%)'
+        url: https://github.com/blinkfox/zealot
+        desc: 一个轻量级的SQL和参数动态生成工具库
+    typora-vue-theme:
+        icon: fa-area-chart
+        iconBackground: 'linear-gradient(to bottom right, #32d6fb 0%, #5558ed 100%)'
+        url: https://github.com/blinkfox/typora-vue-theme
+        desc: This is a typora theme inspired by Vue document style.
+
+# config my skills informations in about page.
+# If you don't want to display this `My Skills` content, you can deactivate or delete this configuration.
+# 在“关于”页面配置"我的技能"信息，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
+mySkills:
+  enable: false
+  data:
+    Java:
+      background: '#EC407A'
+      percent: 85%
+    JavaScript:
+      background: '#AB47BC'
+      percent: 80%
+    HTML5:
+      background: '#42A5F5'
+      percent: 80%
+    CSS:
+      background: '#26C6DA'
+      percent: 70%
+    SQL:
+      background: '#66BB6A'
+      percent: 90%
+    程序设计:
+      background: '#FFA726'
+      percent: 75%
+
+# config gallery of my photos in about page.
+# If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
+# 在“关于”页面配置"我的相册"图片，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
+myGallery:
+  enable: true
+  data:
+    - /medias/featureimages/0.jpg
+    - /medias/featureimages/1.jpg
+    - /medias/featureimages/2.jpg
+
+# Whether to display post-calender in the `archive` page
+# 设置在归档页面中是否显示'文章日历'控件
+postCalendar: true
+
+# the Gitment config，default disabled
+# Gitment评论模块的配置，默认为不激活
+gitment:
+  enable: false
+  owner:
+  repo:
+  oauth:
+    clientId:
+    clientSecret:
+
+# disqus config, default disabled
+# Disqus评论模块的配置，默认为不激活
+disqus:
+  enable: false
+  shortname:
+
+# The post featured images that needs to be displayed when there is no image.
+# 无文章特色图片时需要显示的文章特色图片.
+featureImages:
+- /medias/featureimages/0.jpg
+- /medias/featureimages/1.jpg
+- /medias/featureimages/2.jpg
+- /medias/featureimages/3.jpg
+- /medias/featureimages/4.jpg
+- /medias/featureimages/5.jpg
+- /medias/featureimages/6.jpg
+- /medias/featureimages/7.jpg
+- /medias/featureimages/8.jpg
+- /medias/featureimages/9.jpg
+- /medias/featureimages/10.jpg
+- /medias/featureimages/11.jpg
+- /medias/featureimages/12.jpg
+- /medias/featureimages/13.jpg
+- /medias/featureimages/14.jpg
+- /medias/featureimages/15.jpg
+- /medias/featureimages/16.jpg
+- /medias/featureimages/17.jpg
+- /medias/featureimages/18.jpg
+- /medias/featureimages/19.jpg
+- /medias/featureimages/20.jpg
+- /medias/featureimages/21.jpg
+- /medias/featureimages/22.jpg
+- /medias/featureimages/23.jpg

@@ -11,7 +11,7 @@ copyright: false
 - 个人站点： https://flytreeleft.org、 https://flytreeleft.github.io
 - Github： https://github.com/flytreeleft
 - Twitter: https://twitter.com/flytreeleft
-- Email： flytreeleft@126.com
+- Email： flytreeleft@crazydan.org
 
 ## 自我评价
 
