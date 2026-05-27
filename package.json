@@ -19,6 +19,10 @@
   "hexo": {
     "version": "3.9.0"
   },
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22.5.0"
+  },
   "dependencies": {
     "hexo": "^3.3.5",
     "hexo-autoprefixer": "^1.0.0",
