@@ -5,15 +5,15 @@
   "homepage": "https://flytreeleft.github.io",
   "private": true,
   "scripts": {
-    "dev": "npm run hexo -- server",
-    "debug": "npm run hexo -- server --debug",
-    "create": "npm run hexo -- new",
-    "build": "npm run hexo -- generate",
-    "site": "npm run hexo -- server -s",
-    "clean": "npm run hexo -- clean",
+    "dev": "pnpm run hexo -- server",
+    "debug": "pnpm run hexo -- server --debug",
+    "create": "pnpm run hexo -- new",
+    "build": "pnpm run hexo -- generate",
+    "site": "pnpm run hexo -- server -s",
+    "clean": "pnpm run hexo -- clean",
     "deploy": "bash ./build/deploy.sh config.yml,github.yml",
-    "hexo": "npm run _hexo -- --config config.yml",
-    "_build": "npm run _hexo -- generate",
+    "hexo": "pnpm run _hexo -- --config config.yml",
+    "_build": "pnpm run _hexo -- generate",
     "_hexo": "./node_modules/.bin/hexo"
   },
   "hexo": {
