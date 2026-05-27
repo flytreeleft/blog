@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [24.x]
     steps:
     - name: Pull source code
       # https://github.com/actions/checkout
@@ -30,12 +30,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Build with NPM
+    - name: Build with PNPM
       run: |
-        npm install -g yarn
-        yarn install
-        npm run clean
-        npm run _build -- --config config.yml,github.yml
+        npm install -g pnpm
+        pnpm install
+        pnpm run clean
+        pnpm run _build -- --config config.yml,github.yml
         cp README.md dist/
     # https://github.com/marketplace/actions/release-github-pages
     # https://github.com/peaceiris/actions-gh-pages
