@@ -33,9 +33,10 @@ jobs:
     - name: Build with PNPM
       run: |
         npm install -g pnpm
+        pnpm clean --lockfile
         pnpm install
         pnpm run clean
-        pnpm run _build -- --config config.yml,github.yml
+        pnpm run _build --config config.yml,github.yml
         cp README.md dist/
     # https://github.com/marketplace/actions/release-github-pages
     # https://github.com/peaceiris/actions-gh-pages

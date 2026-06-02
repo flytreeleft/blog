@@ -12,7 +12,8 @@
     "site": "pnpm run hexo server -s",
     "clean": "pnpm run hexo clean",
     "deploy": "bash ./build/deploy.sh config.yml,github.yml",
-    "hexo": "pnpm exec hexo --config config.yml"
+    "hexo": "pnpm exec hexo --config config.yml",
+    "_build": "pnpm exec hexo generate"
   },
   "hexo": {
     "version": "8.1.2"
