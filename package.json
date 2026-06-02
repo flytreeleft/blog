@@ -5,41 +5,35 @@
   "homepage": "https://flytreeleft.github.io",
   "private": true,
   "scripts": {
-    "dev": "pnpm run hexo -- server",
-    "debug": "pnpm run hexo -- server --debug",
-    "create": "pnpm run hexo -- new",
-    "build": "pnpm run hexo -- generate",
-    "site": "pnpm run hexo -- server -s",
-    "clean": "pnpm run hexo -- clean",
+    "dev": "pnpm run hexo server",
+    "debug": "pnpm run hexo server --debug",
+    "create": "pnpm run hexo new",
+    "build": "pnpm run hexo generate",
+    "site": "pnpm run hexo server -s",
+    "clean": "pnpm run hexo clean",
     "deploy": "bash ./build/deploy.sh config.yml,github.yml",
-    "hexo": "pnpm run _hexo -- --config config.yml",
-    "_build": "pnpm run _hexo -- generate",
-    "_hexo": "./node_modules/.bin/hexo"
+    "hexo": "pnpm exec hexo --config config.yml"
   },
   "hexo": {
-    "version": "3.9.0"
-  },
-  "packageManager": "pnpm@10.28.0",
-  "engines": {
-    "node": ">=22.5.0"
+    "version": "8.1.2"
   },
   "dependencies": {
-    "hexo": "^3.3.5",
-    "hexo-autoprefixer": "^1.0.0",
-    "hexo-deployer-git": "^0.3.0",
-    "hexo-generator-archive": "^0.1.4",
-    "hexo-generator-category": "^0.1.3",
-    "hexo-generator-feed": "^1.2.0",
-    "hexo-generator-index": "^0.2.1",
-    "hexo-generator-json-content": "^3.0.1",
-    "hexo-generator-search": "^2.1.1",
-    "hexo-generator-tag": "^0.2.0",
-    "hexo-renderer-ejs": "^0.3.0",
-    "hexo-renderer-jade": "^0.4.1",
+    "hexo": "^8.1.2",
+    "hexo-autoprefixer": "^2.0.0",
+    "hexo-deployer-git": "^4.0.0",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-feed": "^4.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-json-content": "^4.2.3",
+    "hexo-generator-search": "^2.4.3",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-kramed": "^0.1.4",
-    "hexo-renderer-less": "^0.2.0",
-    "hexo-renderer-stylus": "^0.3.3",
-    "hexo-server": "^0.2.0",
-    "hexo-wordcount": "^3.0.2"
+    "hexo-renderer-less": "^4.0.0",
+    "hexo-renderer-pug": "^3.0.0",
+    "hexo-renderer-stylus": "^3.0.1",
+    "hexo-server": "^3.0.0",
+    "hexo-wordcount": "^6.0.1"
   }
 }

@@ -8,39 +8,39 @@
 ### Start local service
 
 ```bash
-$ npm run dev
+$ pnpm run dev
 
 # With debug mode
-$ npm run debug
+$ pnpm run debug
 ```
 
 ### Build publish files
 
 ```bash
 # The publish files will be put to the directory 'dist'
-$ npm run build
+$ pnpm run build
 
 # Clean
-$ npm run clean
+$ pnpm run clean
 ```
 
 ### Create new post
 
 ```bash
-$ npm run create post <title>
+$ pnpm run create post <title>
 
 # Create tags/categories page
 ## https://github.com/iissnan/hexo-theme-next/issues/51
 ## First create pages, then add line:
 ### `type: tags` or `type: categories` to tags/index.md or categories/index.md
-$ npm run create page tags
-$ npm run create page categories
+$ pnpm run create page tags
+$ pnpm run create page categories
 ```
 
 ### Deploy to github
 
 ```bash
-$ npm run deploy
+$ pnpm run deploy
 ```
 
 ## About comments

@@ -6,3 +6,4 @@ npm-debug.log
 db.json
 dist
 deploy_dist
+.pnpm-store
