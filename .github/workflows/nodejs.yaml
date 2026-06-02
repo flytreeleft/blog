@@ -33,7 +33,6 @@ jobs:
     - name: Build with PNPM
       run: |
         npm install -g pnpm
-        pnpm clean --lockfile
         pnpm install
         pnpm run clean
         pnpm run _build --config config.yml,github.yml
